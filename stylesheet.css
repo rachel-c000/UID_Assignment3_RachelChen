@@ -89,6 +89,65 @@
   display: block;     /* Removes bottom space */
 }
 
+.intro-text {
+  max-width: 700px;
+  margin: 80px auto; /* center it horizontally with spacing */
+  margin-top: -600px; /* move up */
+  padding: 0 20px;
+  text-align: center;
+  color: #3c1e10; /* rich dark brown */
+  font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.nutritional-information {
+  max-width: 700px;
+  margin: 80px auto; /* center it horizontally with spacing */
+  margin-top: 0px; /* move up */
+  padding: 0 20px;
+  text-align: center;
+  color: #3c1e10; /* rich dark brown */
+  font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.flavour-profile {
+  max-width: 700px;
+  margin: 80px auto; /* center it horizontally with spacing */
+  margin-top: 0px; /* move up */
+  padding: 0 20px;
+  text-align: center;
+  color: #3c1e10; /* rich dark brown */
+  font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.photo-gallery {
+  flex-direction: row;
+}
+
+.reviews {
+  flex-direction: row;
+}
+
+.review {
+  padding: 10px;
+  border: #3a1f0e;
+  border-width: 10px;
+  text-align: center;
+  color: #3c1e10; /* rich dark brown */
+  font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
 .londrina-solid-regular {
   font-family: "Londrina Solid", sans-serif;
   font-weight: 400;
