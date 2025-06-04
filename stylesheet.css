@@ -202,7 +202,7 @@ footer {
 
 .banner-wrapper {
   position: relative;
-  top: 60px;
+  top: 0px;
   width: 100%;
   height: fit-content; /* adjust based on image size */
   overflow: hidden;
@@ -474,6 +474,10 @@ footer {
   max-width: 90%;
 }
 
+.flavour-gallery {
+  padding: 80px;
+}
+
 /*recipes carousal*/
 
 .recipes-carousel {
@@ -542,19 +546,24 @@ button:hover {
 }
 
 .reviews {
+  display: flex;
   flex-direction: row;
+  padding: 20px;
 }
 
 .review {
-  padding: 10px;
-  border: #3a1f0e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+column-gap: 30px;
+  border: 2px solid var(--darkbrown-color);
   border-width: 10px;
-  text-align: center;
   color: #3c1e10; /* rich dark brown */
   font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 1.8;
+  width: 500px;
 }
 
 /*search-result*/
