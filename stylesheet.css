@@ -28,7 +28,7 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 20px;
   font-family: "Londrina Solid", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -61,6 +61,56 @@ p {
   font-family: "Londrina Solid", sans-serif;
   font-weight: 350;
   font-style: normal;
+}
+
+footer {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+.footer-information {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 5px;
+}
+
+.home-shop-help {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--lightbeigebrown-color);
+  font-weight: 8px;
+}
+
+.footer-address {
+  display: flex;
+  align-items: center;
+  color: var(--lightbeigebrown-color);
+  font-weight: 8px;
+}
+
+.custom-input {
+  border-radius: 30px;
+  padding: 10px;
+  background-color: var(--creme-color);
+}
+
+.custom-input::placeholder {
+  color: var(--lightbrown-color);
+  background-color: var(--creme-color);
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 14px;
+  font-weight: 15px;
+  opacity: 1; /* Ensure it's fully visible */
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*homepage*/
@@ -390,13 +440,8 @@ p {
       padding: 0.5rem;
       width: 300px;
     }
-    footer div {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-    }
 
-    /*Shopping-Cart*/
+      /*Shopping-Cart*/
     .checkout {
       display: flex;
       justify-content: space-between;
