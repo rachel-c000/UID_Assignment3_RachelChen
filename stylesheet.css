@@ -1,3 +1,28 @@
+/*general*/
+
+:root{
+    --creme-color: #F8F8EA;
+    --darkbrown-colour: #30150D;
+    --warmbrown1-color: #79271B;
+    --warmbrown2-color: #651E26;
+    --coolbrown1-color: #583823;
+    --coolbrown2-color: #432521;
+    --lightblue-color: #4EC8F9;
+    --darkblue-color: #375595;
+    --red-color: #A7002C;
+    --orange-color: #AF6001;
+    --yellow-color: #FCBB00;
+    --skin-color: #DAB9AF;
+    --pink-color: #D3577B;
+    --purple-color: #A861FA;
+    --grey-color: #D2D1CF;
+}
+
+h4 {
+  color: var(--creme-color);
+  font-size: 50px;
+}
+
 /*homepage*/
 
 {
@@ -190,26 +215,23 @@
 
 .card h2 {
   font-size: 20px;
+  color: var(--creme-color);
   margin: 10px 0;
 }
 
 .stars {
   font-size: 22px;
-  color: #fff;
+  color: var(--creme-color);
   margin: 10px 0;
 }
 
 .price {
   font-size: 18px;
-  color: #fff;
+  color: var(--creme-color);
 }
 
-.brown {
-  background-color: #4a2b1b;
-}
-
-.blue {
-  background-color: #3b5998;
+.recommendations-banner {
+  background-color: var(--darkbrown-colour);
 }
 
 .londrina-solid-regular {
