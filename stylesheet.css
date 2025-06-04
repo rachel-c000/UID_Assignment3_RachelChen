@@ -241,6 +241,54 @@ footer {
   display: block;     /* Removes bottom space */
 }
 
+/* spices carousal */
+.carousel-container {
+  max-width: 100%;
+  margin: 100px auto;
+  position: relative;
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  opacity: 0.6;
+  transform: scale(0.8);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  border-radius: 8px;
+}
+
+.carousel-item.active {
+  width: 180px;
+  height: 180px;
+  opacity: 1;
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 .intro-text {
   max-width: 700px;
   margin: 80px auto; /* center it horizontally with spacing */
