@@ -18,10 +18,21 @@
     }
 
     .navbar {
-    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     height: 60px; /* or whatever height you need */
     display: flex;
     align-items: center; /* vertical alignment */
+}
+
+.nav-right {
+
+}
+
+.nav-left {
+
 }
 
 .navbar ul {
@@ -63,6 +74,13 @@
 .navbar li img {
   width: 24px;   /* Set desired width */
   height: auto;  /* Maintain aspect ratio */
+}
+
+.nav-icon {
+  width: 24px;   /* or whatever size you want */
+  height: 24px;
+  object-fit: contain;
+  padding: 20px;
 }
 
 .full-width-image {
