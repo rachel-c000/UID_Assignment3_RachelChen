@@ -51,3 +51,18 @@ function moveCarousel(direction) {
 
 // Initialize carousel
 updateCarousel();
+
+const images = document.querySelectorAll('.hover-swap');
+
+images.forEach(img => {
+  const original = img.src;
+  const alt = img.getAttribute('data-alt'); // gets the hover image
+
+  img.addEventListener('mouseenter', () => {
+    img.src = alt;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.src = original;
+  });
+});
