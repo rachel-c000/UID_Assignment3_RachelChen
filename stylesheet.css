@@ -2,7 +2,9 @@
 
 :root{
     --creme-color: #F8F8EA;
-    --darkbrown-colour: #30150D;
+    --darkbrown-color: #30150D;
+    --lightbrown-color: #94867C;
+    --lightbeigebrown-color: #D1CCBB;
     --warmbrown1-color: #79271B;
     --warmbrown2-color: #651E26;
     --coolbrown1-color: #583823;
@@ -18,9 +20,47 @@
     --grey-color: #D2D1CF;
 }
 
+h1 {
+  font-size: 40px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 h4 {
   color: var(--creme-color);
-  font-size: 50px;
+  font-size: 30px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h5 {
+  font-size: 10px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h6 {
+  font-size: 20px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: var(--lightbrown-color);
+}
+
+p {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 350;
+  font-style: normal;
 }
 
 /*homepage*/
@@ -355,3 +395,67 @@ h4 {
       flex-direction: column;
       padding: 1rem;
     }
+
+    /*Shopping-Cart*/
+    .checkout {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      width: auto;
+      
+    }
+    .cart {
+    flex: 1; /* each takes up half the space */
+    padding: 20px;
+    }
+
+    .card-details {
+    flex: 1; /* each takes up half the space */
+    padding: 20px;
+    width: 50%;
+    }
+
+    .card-details.input {
+      background-color: transparent;
+    }
+
+    .product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    }
+
+    .quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-box button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.card-details {
+  background-color: var(--lightbeigebrown-color);
+}
+
+.item {
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.total {
+  background-color: var(--darkbrown-color);
+  padding-top:0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teeny Tiny Spice Company</title>
   <link rel="stylesheet" href="stylesheet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,18 +21,24 @@
   </div>
 </header>
 
-  <div class="container">
-    <div class="cart">
-      <div class="cart-title">MY CART</div>
-      <div class="item">
-        <img src="https://teenytinyspice.com/wp-content/uploads/2020/10/EthiopianBerbere_800-300x300.png" alt="Organic Ethiopian Berbere">
+  <div class="checkout">
+ 
+      <div class="cart-details">
+
+      <h1>MY CART</h1>
+        <div class="item">
+          <img src="media/shopping-cart/cajun-spice-png.png" alt="Cajun Spice" width="30%">
         <div>
-          <div>Organic Ethiopian Berbere</div>
-          <div class="qty">
+          <div class="product-detail">
+          <h5>Organic Ethiopian Berbere</h5>
+          <div class="quantity-box">
             <button>-</button>
             <span style="margin: 0 10px;">3</span>
             <button>+</button>
           </div>
+        </div>
+
+        
         </div>
         <div style="margin-left:auto;">$13</div>
       </div>
@@ -49,11 +56,11 @@
       </div>
 
       <div class="total">
-        Total: $16
+        <h4><span style="color: var(--creme-color);">Total: $16</span></h4>
       </div>
     </div>
 
-    <div class="card-details">
+    <div class="card-details" width="40px">
       <h2>CARD DETAILS</h2>
       <p>Select Card Type</p>
       <p>
@@ -64,10 +71,10 @@
         <img src="https://img.icons8.com/color/48/google-pay.png" width="30" />
       </p>
       <p>Card Number</p>
-      <input type="text" placeholder="__________________________" style="width: 100%; padding: 10px;">
+      <input type="text" placeholder="__________________________" style="width: 20%; padding: 10px;">
       <p>Expiry Date &nbsp;&nbsp; CCV</p>
-      <input type="text" placeholder="__/__/__" style="width: 45%; padding: 10px;">
-      <input type="text" placeholder="___" style="width: 45%; padding: 10px;">
+      <input type="text" placeholder="__/__/__" style="width: 5%; padding: 10px;">
+      <input type="text" placeholder="___" style="width: 5%; padding: 10px;">
 
       <button class="checkout-btn">Checkout</button>
     </div>
