@@ -12,3 +12,18 @@ images.forEach(img => {
 lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
+
+const wordCards = document.querySelectorAll('.word-card');
+const lightbox = document.getElementById('word-lightbox');
+const lightboxWord = document.getElementById('lightbox-word');
+
+wordCards.forEach(card => {
+  card.addEventListener('click', () => {
+    lightboxWord.textContent = card.textContent;
+    lightbox.style.display = 'flex';
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
