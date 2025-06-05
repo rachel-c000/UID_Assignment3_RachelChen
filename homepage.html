@@ -12,15 +12,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('D:\UID\UID_Assignment3_RachelChen\media\homepage-background.png'); /* update with your path */
+  background-image: url('media/homepage-background.png'); /* update with your path */
   background-repeat: no-repeat;
   background-size: cover;         /* or use 'contain' or '100% auto' */
   background-position: top center;
-  background-attachment: fixed;   /* optional: makes it stay during scroll */
-  min-height: 100vh;
+  background-attachment: relative;   /* optional: makes it stay during scroll */
+  min-height: auto;
+  background-color: var(--creme-color);
 }
 </style>
-
 </head>
 
 <!--navbar--->
@@ -76,11 +76,11 @@ body {
   </div>
 
 <!--hero--->
-<section class="hero">
+<!--<section class="hero">
     <img src="media/hero-image.png" alt="hero image" class="full-width-image">
-</section>
+</section>-->
 
-<!--intro-text--->'
+<!--intro-text--->
 <section class="intro-text">
     <p>
       <span style="font-weight: 400;">Welcome to Teeny Tiny Spice Company — where clean, bold flavor rules.<br>
@@ -309,7 +309,7 @@ function moveCarousel(direction) {
     <img src="media/animated carousal/spoon right.png" alt="Next"/>
   </button>
 </div>
-</div>
+
 
 <script>
   let currentSlide = 0;
@@ -401,40 +401,34 @@ function moveCarousel(direction) {
 
 <div class="carousel-wrapper">
     <div class="carousel" id="carousel">
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Jordan T. – Brooklyn, NY</h4>
-      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Jordan T. – Brooklyn, NY</strong></span><br>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
     </div>
       </div>
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Jordan T. – Brooklyn, NY</h4>
-      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Tracy M. – Sedona, US</strong></span><br>★★★★★<br>"You can smell the difference the moment you open the jar. Top-tier quality.</p>
     </div>
       </div>
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Jordan T. – Brooklyn, NY</h4>
-      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Matthew A. – Savannah, US</strong></span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
     </div>
       </div>
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Jordan T. – Brooklyn, NY</h4>
-      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Trasha J. – Quebec City, CA</strong></span><br>★★★★★<br>"My kitchen smells like a global market thanks to these spices. Amazing variety!"</p>
     </div>
       </div>
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Maya R. – Austin, TX</h4>
-      <p>★★★★★<br>“Obsessed with the Latin Lover curry blend — it’s legit restaurant-level flavor at home. Love that I can actually pronounce every ingredient on the label.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Nat K. – Key West, US</strong></span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
     </div>
       </div>
-      <div class="box">
-        <div class="review" style="border: 2px solid var(--darkbrown-color);">
-      <h4>Maya R. – Austin, TX</h4>
-      <p>★★★★★<br>“Obsessed with the Latin Lover curry blend — it’s legit restaurant-level flavor at home. Love that I can actually pronounce every ingredient on the label.”</p>
+      <div class="box" style="border: 2px solid var(--darkbrown-color);">
+        <div class="review">
+      <p><span style="font-size: 30px;"><strong>Uta O. – Belize City, BZ</strong></span><br>★★★★★<br>"Fast delivery, eco-friendly packaging, and the spices were bursting with color and aroma."</p>
     </div>
       </div>
     </div>
@@ -474,6 +468,7 @@ function moveCarousel(direction) {
     </div>
   </div>
 
+  </div>
 <!--footer--->
 
 <footer class="footer">

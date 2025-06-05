@@ -20,9 +20,26 @@
     --grey-color: #D2D1CF;
 }
 
-body {
-  background-color: var(--creme-color);
-}
+  body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f5f0e6;
+    font-family: Arial, sans-serif;
+  }
+  .full-vertical-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .content {
+    position: relative; /* to be on top of background */
+    padding: 2rem;
+    color: #333;
+  }
 
 h1 {
   font-size: 40px;
@@ -290,7 +307,7 @@ footer a {
 .intro-text {
   max-width: 500px;
   margin: 80px auto; /* center it horizontally with spacing */
-  margin-top: -600px; /* move up */
+  margin-top: 800px; /* move up */
   padding: 0 20px;
   text-align: center;
   color: #3c1e10; /* rich dark brown */
@@ -575,6 +592,7 @@ button:hover {
 }
 
 .review {
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -612,16 +630,10 @@ column-gap: 30px;
     }
 
     .box {
-      flex: 0 0 200px;
-      height: fit-content;
-      width: fit-content;
-      background-color: var(--creme-color);
-      border-radius: 10px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2em;
-      color: var(--darkbrown-color);
+      flex-direction: column;     
+      justify-content: center;   
+      height: 350px;               
     }
     .nav-button {
       position: absolute;
@@ -855,7 +867,9 @@ column-gap: 30px;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      padding: 20px;
+      padding: 20px 20px 20px 20px;
+      height: 350px;
+      width: 350px;
     }
     .review img {
       border-radius: 50%;
