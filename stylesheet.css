@@ -73,6 +73,15 @@ footer {
       padding: 1rem;
     }
 
+.footer-information p:hover {
+    transform: scale(1.05);
+}
+
+footer a {
+      color: var(--creme-color);
+      text-decoration: none;
+}
+
 .footer-information {
   display: flex;
   justify-content: space-around;
@@ -624,7 +633,24 @@ column-gap: 30px;
 
     .nav-right {
       right: 10px;
+      display: flex;
+      flex-direction: row;
     }
+
+    #searchBar {
+  display: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
 
 /*search-result*/
 
@@ -669,6 +695,10 @@ column-gap: 30px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {

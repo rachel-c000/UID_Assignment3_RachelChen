@@ -66,3 +66,12 @@ images.forEach(img => {
     img.src = original;
   });
 });
+
+// search bar
+document.getElementById('searchToggle').addEventListener('click', function () {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.style.display = searchBar.style.display === 'inline-block' ? 'none' : 'inline-block';
+  if (searchBar.style.display === 'inline-block') {
+    searchBar.focus();
+  }
+});
