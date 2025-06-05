@@ -152,45 +152,9 @@ footer {
     align-items: center; /* vertical alignment */
 }
 
-.navbar ul {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--darkred-color);
-    list-style-type: none;
-    margin: 0;
-    padding: 0 50px;
-    overflow: hidden;
-}
-
-.figures a {
-    color: var(--red-color);
-}
-
-.navbar a {
-    color: var(--lightyellow-color);
-    text-decoration: none;
-    padding: 30px;
-    display: block;
-}
-
-.navbar a:hover {
-    background-color: var(--red-color);
-}
-
-.navbar li {
-    margin: 0px;
-    font-size: medium;
-    font-weight: 500;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 1rem;
-}
-
-.navbar li img {
-  width: 24px;   /* Set desired width */
-  height: auto;  /* Maintain aspect ratio */
+.navbar img:hover {
+  transform: scale(1.05);
+  filter: brightness(40%) saturate(100%) invert(27%) sepia(71%) saturate(540%) hue-rotate(345deg) brightness(102%) contrast(95%);
 }
 
 .nav-icon {
