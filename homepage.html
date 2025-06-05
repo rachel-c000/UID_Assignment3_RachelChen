@@ -8,14 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 
   <style>
+
 body {
   margin: 0;
   padding: 0;
-  background-image: url(""); /* path to your image */
+  background-image: url('D:\UID\UID_Assignment3_RachelChen\media\homepage-background.png'); /* update with your path */
   background-repeat: no-repeat;
-  background-size: cover;     /* or 'contain', or use specific sizes like '100% auto' */
-  background-position: center;
-  background-color: var(--creme-color);
+  background-size: cover;         /* or use 'contain' or '100% auto' */
+  background-position: top center;
+  background-attachment: fixed;   /* optional: makes it stay during scroll */
+  min-height: 100vh;
 }
 </style>
 
@@ -41,11 +43,9 @@ body {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
@@ -53,11 +53,9 @@ body {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
@@ -89,11 +87,11 @@ body {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
+      <img src="media/animated carousal/ehtiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
+      <img src="media/animated carousal/persian adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
@@ -101,48 +99,61 @@ body {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
+      <img src="media/animated carousal/ehtiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
+      <img src="media/animated carousal/persian adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
     </div>
   </div>
 
-<!--spice-carousal--->
+<!--spice-carousel--->
+<div class="spice-carousel">
 <div class="carousel-container">
   <div class="carousel-track">
+    <div class="carousel-item">
     <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
+    <p class="carousel-caption">Afghani Spice</p>
+    </div>
     <img src="media/animated carousal/cajun spice.png" class="carousel-item" />
     <img src="media/animated carousal/chocolate chili.png" class="carousel-item" />
-    <img src="media/animated carousal/ethiopian berbere.png" class="carousel-item" />
+    <img src="media/animated carousal/ehtiopian berbere.png" class="carousel-item" />
     <img src="media/animated carousal/garam masala.png" class="carousel-item" />
     <img src="media/animated carousal/himalayan pink salt.png" class="carousel-item" />
     <img src="media/animated carousal/montreal seasoning.png" class="carousel-item" />
-    <img src="media/animated carousal/perisan adwiya.png" class="carousel-item" />
+    <img src="media/animated carousal/persian adwiya.png" class="carousel-item" />
     <img src="media/animated carousal/szechuan spice.png" class="carousel-item" />
     <img src="media/animated carousal/tolucan chorizo spice.png" class="carousel-item" />
     <img src="media/animated carousal/vindaloo.png" class="carousel-item" />
 
-        <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
+    <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
     <img src="media/animated carousal/cajun spice.png" class="carousel-item" />
     <img src="media/animated carousal/chocolate chili.png" class="carousel-item" />
-    <img src="media/animated carousal/ethiopian berbere.png" class="carousel-item" />
+    <img src="media/animated carousal/ehtiopian berbere.png" class="carousel-item" />
     <img src="media/animated carousal/garam masala.png" class="carousel-item" />
     <img src="media/animated carousal/himalayan pink salt.png" class="carousel-item" />
     <img src="media/animated carousal/montreal seasoning.png" class="carousel-item" />
-    <img src="media/animated carousal/perisan adwiya.png" class="carousel-item" />
+    <img src="media/animated carousal/persian adwiya.png" class="carousel-item" />
     <img src="media/animated carousal/szechuan spice.png" class="carousel-item" />
     <img src="media/animated carousal/tolucan chorizo spice.png" class="carousel-item" />
     <img src="media/animated carousal/vindaloo.png" class="carousel-item" />
   </div>
-  <div class="controls">
-    <button onclick="moveCarousel(-1)">← Prev</button>
-    <button onclick="moveCarousel(1)">Next →</button>
-  </div>
+
+  <!--spoon-button-->
+<div class="controls">
+  <button class="image-button" onclick="moveCarousel(-1)">
+    <img src="media/animated carousal/spoon left.png" alt="Previous"/>
+  </button>
+
+  <button class="image-button" onclick="moveCarousel(1)">
+    <img src="media/animated carousal/spoon right.png" alt="Next"/>
+  </button>
+</div>
+</div>
+
 </div>
 
 <script>
@@ -196,11 +207,9 @@ function moveCarousel(direction) {
 
 <div class="recipes-carousel">
   <div class="slide active">
-
-    <div class="recipes-image">
+  <div class="recipes-image">
   <img src="media/recipes/Chicken Cordon Bleu-ish.png" height="30%" width="auto">
   </div>
-
   <div class="recipes-text">
     <h2>Chicken Cordon Bleu-ish</h2>
   <div class="ingrediants-gallery">
@@ -212,14 +221,112 @@ function moveCarousel(direction) {
     <p>A cozy twist on the classic, this comforting dish wraps tender chicken around melty cheese and savory ham — crispy on the outside, creamy and satisfying on the inside.</p>
     </div>
   </div>
-
 </div>
-  <div class="slide" style="background-image: url('img2.jpg');"></div>
-  <div class="slide" style="background-image: url('img3.jpg');"></div>
+  <div class="slide">
+  <div class="recipes-image">
+  <img src="media/recipes/Wild Daylilly and Egg Soup.png" height="30%" width="auto">
+  </div>
+  <div class="recipes-text">
+    <h2>Wild Daylilly and Egg Soup</h2>
+  <div class="ingrediants-gallery">
+    <div class="ingrediant"><h5>Szechuan Spice</h5></div>
+    <div class="ingrediant"><h5>Chinese Five Spice</h5></div>
+    <div class="ingrediant"><h5>Xinjiang Spice</h5></div>
+  </div>
+  <div class="recipe-description">
+    <p>A delicate, earthy broth that celebrates nature’s foraged beauty — wild daylilies and gently poached egg come together in a bowl of pure, peaceful nourishment.</p>
+    </div>
+  </div>
+</div>
+  <div class="slide">
+  <div class="recipes-image">
+  <img src="media/recipes/Spiced Chocolate Mousse.png" height="30%" width="auto">
+  </div>
+  <div class="recipes-text">
+    <h2>Spiced Chocolate Mousse</h2>
+  <div class="ingrediants-gallery">
+    <div class="ingrediant"><h5>Chocolate Chilli</h5></div>
+    <div class="ingrediant"><h5>Garam Masala</h5></div>
+    <div class="ingrediant"><h5>French Four Spice</h5></div>
+  </div>
+  <div class="recipe-description">
+    <p>Rich, silky chocolate with a warming kiss of spice — this mousse is like a hug in dessert form, perfect for slow moments and sweet cravings.</p>
+    </div>
+  </div>
+</div>
+  <div class="slide">
+  <div class="recipes-image">
+  <img src="media/recipes/Breakfast Lettuce Taco Bowl.png" height="30%" width="auto">
+  </div>
+  <div class="recipes-text">
+    <h2>Breakfast Lettuce Taco Bowl</h2>
+  <div class="ingrediants-gallery">
+    <div class="ingrediant"><h5>Oxacan Adobo</h5></div>
+    <div class="ingrediant"><h5>Seaside Spice</h5></div>
+    <div class="ingrediant"><h5>Tolucan Chorizo</h5></div>
+  </div>
+  <div class="recipe-description">
+    <p>Fresh, fun, and full of morning energy — crisp lettuce cradles savory breakfast favorites in a light and cheerful bowl that starts the day right.</p>
+    </div>
+  </div>
+</div>
+  <div class="slide">
+  <div class="recipes-image">
+  <img src="media/recipes/Salmon en Papilotte.png" height="30%" width="auto">
+  </div>
+  <div class="recipes-text">
+    <h2>Salmon en Papilotte</h2>
+  <div class="ingrediants-gallery">
+    <div class="ingrediant"><h5>Hot Italian Spice</h5></div>
+    <div class="ingrediant"><h5>Seaside Spice</h5></div>
+    <div class="ingrediant"><h5>West African Curry</h5></div>
+  </div>
+  <div class="recipe-description">
+    <p>An elegant parcel of perfectly steamed salmon, gently cooked in parchment with herbs and vegetables — opening it feels like unwrapping a warm, fragrant gift.</p>
+    </div>
+  </div>
+</div>
 </div> 
-  <button class="prev" onclick="moveSlide(-1)">❮</button>
-  <button class="next" onclick="moveSlide(1)">❯</button>
+<div class="controls">
+  <button class="image-button" onclick="moveCarousel(-1)">
+    <img src="media/animated carousal/spoon left.png" alt="Previous"/>
+  </button>
+
+  <button class="image-button" onclick="moveCarousel(1)">
+    <img src="media/animated carousal/spoon right.png" alt="Next"/>
+  </button>
 </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.opacity = '0'; // hide
+    });
+
+    slides[index].classList.add('active');
+    slides[index].style.opacity = '1'; // show
+  }
+
+  function moveCarousel(direction) {
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    } else if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  // Optional: Initialize visibility
+  showSlide(currentSlide);
+</script>
 
 <!--flavour-profile--->
 <div class="flavour-gallery">
@@ -259,16 +366,16 @@ function moveCarousel(direction) {
     <h1>SPICE SHAPING OUR MOMENTS</h1>
 </div>
   <div class="gallery">
+    <img src="media/photo-gallery/photo.6.png" alt="Gallery Image 1" class="gallery-img" />
+    <img src="media/photo-gallery/62ad81ed8453258531fd8351d07b1ea0.jpg" alt="Gallery Image 2" class="gallery-img" />
     <img src="media/photo-gallery/photo.1.png" alt="Gallery Image 1" class="gallery-img" />
     <img src="media/photo-gallery/photo.2.png" alt="Gallery Image 2" class="gallery-img" />
     <img src="media/photo-gallery/photo.3.png" alt="Gallery Image 3" class="gallery-img" />
     <img src="media/photo-gallery/photo.4.png" alt="Gallery Image 4" class="gallery-img" />
-    <img src="media/photo-gallery/photo.1.png" alt="Gallery Image 1" class="gallery-img" />
-    <img src="media/photo-gallery/photo.2.png" alt="Gallery Image 2" class="gallery-img" />
-    <img src="media/photo-gallery/photo.3.png" alt="Gallery Image 3" class="gallery-img" />
-    <img src="media/photo-gallery/photo.4.png" alt="Gallery Image 4" class="gallery-img" />
-    <img src="media/photo-gallery/photo.3.png" alt="Gallery Image 3" class="gallery-img" />
-    <img src="media/photo-gallery/photo.4.png" alt="Gallery Image 4" class="gallery-img" />
+    <img src="media/photo-gallery/ba0ca5a15293cf48aa5aa7f32c30f65f.jpg" alt="Gallery Image 4" class="gallery-img" />
+    <img src="media/photo-gallery/photo.5.png" alt="Gallery Image 3" class="gallery-img" />
+    <img src="media/photo-gallery/d5dfa1eb03e6da01933fedddc8543dd3.jpg" alt="Gallery Image 4" class="gallery-img" />
+        <img src="media/photo-gallery/photo.2.png" alt="Gallery Image 1" class="gallery-img" />
   </div>
 
   <div id="lightbox" class="lightbox">
@@ -335,11 +442,9 @@ function moveCarousel(direction) {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
@@ -347,11 +452,9 @@ function moveCarousel(direction) {
       <img src="media/animated carousal/afghani spice.png" alt="afghani spice" />
       <img src="media/animated carousal/cajun spice.png" alt="cajun spice" />
       <img src="media/animated carousal/chocolate chili.png" alt="chocolate chili" />
-      <img src="media/animated carousal/ethiopian berbere.png" alt="enthiopian berbere" />
       <img src="media/animated carousal/garam masala.png" alt="garam masala" />
       <img src="media/animated carousal/himalayan pink salt.png" alt="himalayan pink salt" />
       <img src="media/animated carousal/montreal seasoning.png" alt="montreal seasoning" />
-      <img src="media/animated carousal/perisan adwiya.png" alt="perisan adwiya" />
       <img src="media/animated carousal/szechuan spice.png" alt="szechuan spice" />
       <img src="media/animated carousal/tolucan chorizo spice.png" alt="tolucan chorizo spice" />
       <img src="media/animated carousal/vindaloo.png" alt="vindaloo" />
