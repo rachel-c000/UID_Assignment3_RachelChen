@@ -61,9 +61,17 @@ h6 {
   color: var(--lightbrown-color);
 }
 
-p {
+h7 {
+  font-size: 20px;
   font-family: "Londrina Solid", sans-serif;
   font-weight: 200;
+  font-style: normal;
+  color: var(--darkbrown-color);
+}
+
+p {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 50;
   font-style: normal;
 }
 
@@ -568,7 +576,7 @@ button:hover {
 
 .review {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 column-gap: 30px;
   border-width: 10px;
@@ -726,6 +734,8 @@ column-gap: 30px;
 
 .recommendations-banner {
   background-color: var(--darkbrown-colour);
+  fill: var(--darkbrown-color);
+  width: 100%;
 }
 
 .londrina-solid-regular {
@@ -782,7 +792,7 @@ column-gap: 30px;
     }
     .description {
       margin: 1rem 0;
-      width: 500px;
+  
     }
     .meta {
       font-weight: bold;
@@ -811,16 +821,34 @@ column-gap: 30px;
       align-items: center;
       gap: 2rem;
     }
-    .customer-profiles {
+    .customer-profile {
+      display: flex;
       flex-direction: column;
+      align-items: center;
       padding: 5px;
+      width: 1500px;
+    }
+    .customer-profile img {
+      width: 300px;
+      height: auto;
     }
     .reviews {
       padding: 2rem;
+      display: flex;
+      width: 900px;
     }
     .review-score {
       font-size: 2rem;
       font-weight: bold;
+    }
+    .their-review {
+  width: 800px;
+    }
+    .their-review p {
+      width: 800px;
+    }
+    .customer-profile h7 {
+      width: 200px;
     }
     .review {
       margin: 1rem 0;
@@ -832,6 +860,13 @@ column-gap: 30px;
     .review img {
       border-radius: 50%;
       width: 50px;
+    }
+    .related-section {
+      padding: 80px 10px 80px 10px;
+      justify-content: space-around;
+    }
+    .related-card-container {
+      padding: 20px;
     }
     .related-products {
       display: flex;
