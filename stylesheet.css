@@ -259,10 +259,10 @@ footer {
 }
 
 .carousel-item {
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 1;
   transform: scale(0.8);
   transition: transform 0.4s ease, opacity 0.4s ease;
   border-radius: 8px;
@@ -278,6 +278,7 @@ footer {
 
 .controls {
   margin-top: 20px;
+  justify-content: space-around;
 }
 
 .controls button {
@@ -312,6 +313,26 @@ footer {
   font-size: 1.4rem;
   line-height: 1.8;
   background-color: var(--creme-color);
+}
+
+.more-button-out {
+  padding: 0px 60px 100px 0px;
+  justify-content: end;
+}
+
+#more-button {
+  padding: 10px 10px;
+  font-size: 16px;
+  background: var(--darkbrown-color);
+  color: var(--creme-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.more-button:hover {
+  background: #2980b9;
 }
 
 .flavour-profile {
@@ -566,6 +587,61 @@ column-gap: 30px;
   width: 500px;
 }
 
+ 
+    .carousel-wrapper {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      padding-top: 200px;
+      padding-bottom: 200px;
+    }
+
+    .carousel {
+  display: flex;
+  gap: 20px;
+  padding: 0 60px;
+  overflow-x: auto;            /* ENABLE horizontal scrolling */
+  scroll-behavior: smooth;
+  scrollbar-width: none;       /* Hide scroll on Firefox */
+  -webkit-overflow-scrolling: touch; /* Smoother scroll on iOS */
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+
+    .box {
+      flex: 0 0 200px;
+      height: fit-content;
+      width: fit-content;
+      background-color: var(--creme-color);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      color: var(--darkbrown-color);
+    }
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .nav-left {
+      left: 10px;
+    }
+
+    .nav-right {
+      right: 10px;
+    }
+
 /*search-result*/
 
 .search-result-title {
@@ -738,6 +814,7 @@ column-gap: 30px;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
+      padding: 20px;
     }
     .review img {
       border-radius: 50%;

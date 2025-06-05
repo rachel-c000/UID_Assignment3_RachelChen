@@ -126,6 +126,18 @@ body {
     <img src="media/animated carousal/szechuan spice.png" class="carousel-item" />
     <img src="media/animated carousal/tolucan chorizo spice.png" class="carousel-item" />
     <img src="media/animated carousal/vindaloo.png" class="carousel-item" />
+
+        <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
+    <img src="media/animated carousal/cajun spice.png" class="carousel-item" />
+    <img src="media/animated carousal/chocolate chili.png" class="carousel-item" />
+    <img src="media/animated carousal/ethiopian berbere.png" class="carousel-item" />
+    <img src="media/animated carousal/garam masala.png" class="carousel-item" />
+    <img src="media/animated carousal/himalayan pink salt.png" class="carousel-item" />
+    <img src="media/animated carousal/montreal seasoning.png" class="carousel-item" />
+    <img src="media/animated carousal/perisan adwiya.png" class="carousel-item" />
+    <img src="media/animated carousal/szechuan spice.png" class="carousel-item" />
+    <img src="media/animated carousal/tolucan chorizo spice.png" class="carousel-item" />
+    <img src="media/animated carousal/vindaloo.png" class="carousel-item" />
   </div>
   <div class="controls">
     <button onclick="moveCarousel(-1)">← Prev</button>
@@ -133,9 +145,22 @@ body {
   </div>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+let scrollPosition = 0;
+const scrollAmount = 500; // Amount to move per click (120px width + 16px gap)
+
+const track = document.querySelector('.carousel-track');
+
+function moveCarousel(direction) {
+  scrollPosition += direction * scrollAmount;
+  // Clamp scrollPosition within valid bounds
+  scrollPosition = Math.max(0, Math.min(scrollPosition, track.scrollWidth - track.clientWidth));
+  track.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth'
+  });
+}
+</script>
 
 <!--nutritional information--->
 <div class="nutritional-information-title">
@@ -159,6 +184,13 @@ body {
   </div>
 
   <script src="script.js"></script>
+
+  <!--more-button-->
+  <div class="more-button-out">
+<div style="text-align: right; margin-top: 20px;">
+  <button id="more-button"><span style="color: var(--creme-color); font-family: "Londrina Solid, sans-serif;>LEARN MORE</span></button>
+</div>
+</div>
 
 <!--recipes-carousal--->
 
@@ -206,6 +238,13 @@ body {
     <div class="word-card"><h2>Herb</h2></div>
   </div>
 
+  <!--more-button-->
+  <div class="more-button-out">
+<div style="text-align: right; margin-top: 20px; padding-right: -60px;">
+  <button id="more-button"><span style="color: var(--creme-color); font-family: "Londrina Solid, sans-serif;>LEARN MORE</span></button>
+</div>
+</div>
+
   <!-- Lightbox-style word display -->
   <div id="word-lightbox" class="word-lightbox">
     <p id="lightbox-word"></p>
@@ -240,16 +279,56 @@ body {
 
 <!--reviews--->
 
-<section class="reviews" style="flex-direction: row;">
-    <div class="review" style="border: 2px solid var(--darkbrown-color);">
+<div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
       <h4>Jordan T. – Brooklyn, NY</h4>
       <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
     </div>
-    <div class="review" style="border: 2px solid var(--darkbrown-color);">
+      </div>
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
+      <h4>Jordan T. – Brooklyn, NY</h4>
+      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+    </div>
+      </div>
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
+      <h4>Jordan T. – Brooklyn, NY</h4>
+      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+    </div>
+      </div>
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
+      <h4>Jordan T. – Brooklyn, NY</h4>
+      <p>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+    </div>
+      </div>
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
       <h4>Maya R. – Austin, TX</h4>
       <p>★★★★★<br>“Obsessed with the Latin Lover curry blend — it’s legit restaurant-level flavor at home. Love that I can actually pronounce every ingredient on the label.”</p>
     </div>
-</section>
+      </div>
+      <div class="box">
+        <div class="review" style="border: 2px solid var(--darkbrown-color);">
+      <h4>Maya R. – Austin, TX</h4>
+      <p>★★★★★<br>“Obsessed with the Latin Lover curry blend — it’s legit restaurant-level flavor at home. Love that I can actually pronounce every ingredient on the label.”</p>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const carousel = document.querySelector('.carousel');
+
+  carousel.addEventListener('wheel', (e) => {
+    e.preventDefault(); // stop page from scrolling
+  const scrollSpeed = 3; // increase this to scroll further per tick
+  carousel.scrollLeft += e.deltaY * scrollSpeed;
+  });
+</script>
 
  <div class="banner-wrapper">
     <div class="image-banner">
