@@ -123,7 +123,98 @@ body {
     </div>
   </div>
 
-<!--spice-carousel--->
+  <div class="spice-carousel">
+  <div class="slide active">
+    <div class="spice-item">
+    <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
+    <p class="spice-caption">Afghani Spice<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/montreal seasoning.png" class="carousel-item" />
+    <p class="spice-caption">Montreal Seasoing<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/persian adwiya.png" class="carousel-item" />
+    <p class="spice-caption">Persian Adwiya<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/cajun spice.png" class="carousel-item" />
+    <p class="spice-caption">Cajun Spice<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/chocolate chili.png" class="carousel-item" />
+    <p class="spice-caption">Chocolate Chili<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/ehtiopian berbere.png" class="carousel-item" />
+    <p class="spice-caption">Ethiopian Berbere<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/garam masala.png" class="carousel-item" />
+    <p class="spice-caption">Garam Masala<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/himalayan pink salt.png" class="carousel-item" />
+    <p class="spice-caption">Himalayan Pink Salt<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+</div> 
+<div class="controls">
+  <button class="image-button" onclick="moveCarousel(-1)">
+    <img src="media/animated carousal/spoon left.png" alt="Previous"/>
+  </button>
+
+  <button class="image-button" onclick="moveCarousel(1)">
+    <img src="media/animated carousal/spoon right.png" alt="Next"/>
+  </button>
+</div>
+
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.opacity = '0'; // hide
+    });
+
+    slides[index].classList.add('active');
+    slides[index].style.opacity = '1'; // show
+  }
+
+  function moveCarousel(direction) {
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    } else if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  // Optional: Initialize visibility
+  showSlide(currentSlide);
+</script>
+
+<!--spice-carousel
 <div class="spice-carousel">
 <div class="carousel-container">
   <div class="carousel-track">
@@ -155,7 +246,7 @@ body {
     <img src="media/animated carousal/vindaloo.png" class="carousel-item" />
   </div>
 
-  <!--spoon-button-->
+  spoon-button
 <div class="controls">
   <button class="image-button" onclick="moveCarousel(-1)">
     <img src="media/animated carousal/spoon left.png" alt="Previous"/>
@@ -166,25 +257,8 @@ body {
   </button>
 </div>
 </div>
-
 </div>
-
-<script>
-let scrollPosition = 0;
-const scrollAmount = 500; // Amount to move per click (120px width + 16px gap)
-
-const track = document.querySelector('.carousel-track');
-
-function moveCarousel(direction) {
-  scrollPosition += direction * scrollAmount;
-  // Clamp scrollPosition within valid bounds
-  scrollPosition = Math.max(0, Math.min(scrollPosition, track.scrollWidth - track.clientWidth));
-  track.scrollTo({
-    left: scrollPosition,
-    behavior: 'smooth'
-  });
-}
-</script>
+---->
 
 <!--nutritional information--->
 <div class="nutritional-information-title">

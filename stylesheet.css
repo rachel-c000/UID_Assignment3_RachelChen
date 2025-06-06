@@ -237,53 +237,141 @@ footer a {
   display: block;     /* Removes bottom space */
 }
 
-/* spices carousal */
+.container {
+	padding: 2rem;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+  scroll-snap-align: start;
+  width: 300px;
+  height: 300px;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+
+.spice-slide {
+  display: flex;
+  flex-direction: column;  /* Stack children vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically (if container has height) */
+  text-align: center;      /* Center text */
+  gap: 1rem;               /* Optional spacing between items */
+}
+/* spice carousal */
 .spice-carousel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--darkbrown-color);
+}
+
+.spice-image {
+  padding: 20px;
+  padding-left: 100px;
+}
+
+.spice-image img {
+  width: 500px;
+  height: auto;
+}
+.spice-caption {
+color: var(--darkbrown-color);
+font-size: 30px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: -30px;
+}
+
+.slide {
+  position: absolute;
   width: 100%;
-  align-items: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Edge */
-}
-
-.carousel-track {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
   display: flex;
+  flex-direction: row;
+  padding: 20px;
+  padding-left: -40px;
+  color: var(--creme-color);
+  align-items: center;
+  opacity: 0;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 100px;
-    scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  overflow-x: auto;
-  overflow-y: hidden;
 }
 
-.carousel-item {
-  flex-shrink: 0;
-  width: 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.ingrediant {
+color: var(--darkbrown-color);
 }
 
-.carousel-item img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
 }
 
-.carousel-caption {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #333;
-  line-height: 1.2;
-  white-space: normal;
+button:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
 .image-button {
@@ -304,6 +392,48 @@ footer a {
   justify-content: center;
 }
 
+.carousel-item {
+  flex-shrink: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.spice-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spice-item img {
+width: 350px;
+height: auto;
+padding-bottom: -30px;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: -20px 0 0 0px;
+}
+
+/*intro text*/
 .intro-text {
   max-width: 500px;
   margin: 80px auto; /* center it horizontally with spacing */
@@ -405,11 +535,13 @@ footer a {
 .photo-gallery-title {
   display: flex;
   justify-content: center;
+  padding-top: 200px;
 }
 
 .nutritional-information-title {
   display: flex;
   justify-content: center;
+  padding-top: 150px;
 }
 
 .nutritional-information {
@@ -539,22 +671,6 @@ footer a {
   padding: 20px;
 }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  color: var(--creme-color);
-  align-items: center;
-    opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 0;
-}
-
 .slide.active {
   opacity: 1;
   z-index: 1;
@@ -587,8 +703,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  padding-left: -100px;
   width: fit-content;
-  align-items: center;
+  align-items: start;
 }
 
 .review {
@@ -633,7 +750,8 @@ column-gap: 30px;
       display: flex;
       flex-direction: column;     
       justify-content: center;   
-      height: 350px;               
+      height: 350px;      
+      background-color: var(--creme-color);        
     }
     .nav-button {
       position: absolute;
@@ -798,6 +916,18 @@ column-gap: 30px;
     .product-info h1 {
       font-size: 1.5rem;
     }
+    .page-link {
+      display: flex;
+      flex-direction: row;
+      opacity: 0.5;
+      padding: 0 20px 20px 20px;
+    }
+
+  .page-link a {
+    padding: 10px;
+    color: var(--coolbrown1-color);
+    text-decoration: none;
+  }
     .rating {
       color: #000;
       margin: 0.5rem 0;
@@ -858,6 +988,9 @@ column-gap: 30px;
     }
     .their-review p {
       width: 800px;
+    }
+    .their-their-review {
+      padding-left: -100px;
     }
     .customer-profile h7 {
       width: 200px;

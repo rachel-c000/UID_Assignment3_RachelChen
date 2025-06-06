@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teeny Tiny Spice Company</title>
+  <link rel="stylesheet" href="spice-slide.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+
+<body>
+<div class="recipes-carousel">
+  <div class="slide active">
+    <div class="spice-item">
+    <img src="media/animated carousal/afghani spice.png" class="carousel-item" />
+    <p class="carousel-caption">Afghani Spice<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/montreal seasoning.png" class="carousel-item" />
+    <p class="carousel-caption">Montreal Seasoing<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/persian adwiya.png" class="carousel-item" />
+    <p class="carousel-caption">Persian Adwiya<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/cajun spice.png" class="carousel-item" />
+    <p class="carousel-caption">Cajun Spice<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/chocolate chili.png" class="carousel-item" />
+    <p class="carousel-caption">Chocolate Chili<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/ehtiopian berbere.png" class="carousel-item" />
+    <p class="carousel-caption">Ethiopian Berbere<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/garam masala.png" class="carousel-item" />
+    <p class="carousel-caption">Garam Masala<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+  <div class="slide">
+    <div class="spice-item">
+    <img src="media/animated carousal/himalayan pink salt.png" class="carousel-item" />
+    <p class="carousel-caption">Himalayan Pink Salt<br>★★★★★<br>$13.40</p>
+    </div>
+</div>
+</div> 
+<div class="controls">
+  <button class="image-button" onclick="moveCarousel(-1)">
+    <img src="media/animated carousal/spoon left.png" alt="Previous"/>
+  </button>
+
+  <button class="image-button" onclick="moveCarousel(1)">
+    <img src="media/animated carousal/spoon right.png" alt="Next"/>
+  </button>
+</div>
+
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.opacity = '0'; // hide
+    });
+
+    slides[index].classList.add('active');
+    slides[index].style.opacity = '1'; // show
+  }
+
+  function moveCarousel(direction) {
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    } else if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  // Optional: Initialize visibility
+  showSlide(currentSlide);
+</script>
+</body>

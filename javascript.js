@@ -31,23 +31,23 @@ lightbox.addEventListener('click', () => {
 const items = document.querySelectorAll('.carousel-item');
 let currentIndex = 1;
 
-function updateCarousel() {
-  items.forEach((item, index) => {
-    item.classList.remove('active');
-    item.style.display = Math.abs(index - currentIndex) > 1 ? 'none' : 'block';
-  });
+//function updateCarousel() {
+ // items.forEach((item, index) => {
+   // item.classList.remove('active');
+   // item.style.display = Math.abs(index - currentIndex) > 1 ? 'none' : 'block';
+ // });
 
-  if (items[currentIndex]) {
-    items[currentIndex].classList.add('active');
-  }
-}
+ // if (items[currentIndex]) {
+ //   items[currentIndex].classList.add('active');
+ // }
+//}
 
-function moveCarousel(direction) {
-  currentIndex += direction;
-  if (currentIndex < 0) currentIndex = 0;
-  if (currentIndex > items.length - 1) currentIndex = items.length - 1;
-  updateCarousel();
-}
+//function moveCarousel(direction) {
+ // currentIndex += direction;
+ // if (currentIndex < 0) currentIndex = 0;
+ // if (currentIndex > items.length - 1) currentIndex = items.length - 1;
+ // updateCarousel();
+//}//
 
 // Initialize carousel
 updateCarousel();
@@ -75,3 +75,14 @@ document.getElementById('searchToggle').addEventListener('click', function () {
     searchBar.focus();
   }
 });
+
+<script>
+  function moveCarousel(direction) {
+    const track = document.querySelector('.carousel-track');
+    const itemWidth = track.querySelector('.carousel-item').offsetWidth;
+    track.scrollBy({
+      left: direction * (itemWidth + 16), // 16 = your gap
+      behavior: 'smooth'
+    });
+  }
+</script>

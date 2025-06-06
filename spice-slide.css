@@ -1,0 +1,127 @@
+.recipes-carousel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--darkbrown-color);
+}
+
+.recipes-image {
+  padding: 20px;
+  padding-left: 100px;
+}
+
+.recipes-image img {
+  width: 500px;
+  height: auto;
+}
+
+.recipes-text {
+  width: 500px;
+  padding: 20px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  color: var(--creme-color);
+  align-items: center;
+    opacity: 0;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingrediant {
+color: var(--darkbrown-color);
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  align-items: center;
+}
+
+.image-button img {
+  width: 150px;
+  height: auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.spice-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spice-item img {
+width: 350px;
+height: auto;
+padding: 0;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: -20px 0 0 0px;
+}
