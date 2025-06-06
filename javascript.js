@@ -76,7 +76,6 @@ document.getElementById('searchToggle').addEventListener('click', function () {
   }
 });
 
-<script>
   function moveCarousel(direction) {
     const track = document.querySelector('.carousel-track');
     const itemWidth = track.querySelector('.carousel-item').offsetWidth;
@@ -85,4 +84,23 @@ document.getElementById('searchToggle').addEventListener('click', function () {
       behavior: 'smooth'
     });
   }
-</script>
+
+// quantity button
+
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
+  const quantityValue = document.getElementById("quantity-value");
+
+  let quantity = 1;
+
+  increaseBtn.addEventListener("click", () => {
+    quantity++;
+    quantityValue.textContent = quantity;
+  });
+
+  decreaseBtn.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      quantityValue.textContent = quantity;
+    }
+  });

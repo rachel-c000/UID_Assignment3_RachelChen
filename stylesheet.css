@@ -946,6 +946,15 @@ column-gap: 30px;
       gap: 1rem;
       margin-bottom: 1rem;
     }
+    .qty-btn {
+        background: none;
+  border: none;
+  color: inherit;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+    }
     .btn {
       background: #4d1f00;
       color: white;
@@ -1040,17 +1049,26 @@ column-gap: 30px;
       justify-content: space-between;
       padding: 20px;
       width: auto;
-      
+      }
+    .checkout-button {
+      margin-top: -150px;
+      padding: 50px;
+      display: flex;
+      justify-content: end;
+    }
+    .checkout-button button {
+      background-color: var(--darkbrown-color);
+      color: var(--creme-color);
     }
     .cart {
     flex: 1; /* each takes up half the space */
     padding: 20px;
     }
 
-    .card-details {
+    .cart-details {
     flex: 1; /* each takes up half the space */
     padding: 20px;
-    width: 50%;
+    width: 80px;
     }
 
     .card-details.input {
@@ -1079,6 +1097,9 @@ column-gap: 30px;
 
 .card-details {
   background-color: var(--lightbeigebrown-color);
+  padding: 20px;
+  margin-top: 60px;
+  height: fit-content;
 }
 
 .item {

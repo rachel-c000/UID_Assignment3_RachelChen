@@ -9,12 +9,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('media/productpage-background.png'); /* update with your path */
+  background-image: url(''); /* update with your path */
   background-repeat: no-repeat;
   background-size: cover;         /* or use 'contain' or '100% auto' */
   background-position: top center;
   background-attachment: relative;   /* optional: makes it stay during scroll */
   min-height: auto;
+  background-color: var(--creme-color);
 }
 </style>
 </head>
@@ -100,15 +101,15 @@ body {
           Net Weight/Shipping Weight<br>
           80g (2.82 oz) / 185g (6.5 oz)
         </div>
-        <div class="quantity-selector">
-          <label>Quantity</label>
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-        </div>
-        <button class="btn">Add to cart</button>
+<div class="quantity-selector">
+  <label>Quantity</label>
+  <button class="qty-btn" id="decrease">−</button>
+  <span id="quantity-value">1</span>
+  <button class="qty-btn" id="increase">+</button>
+</div>
+        <button class="btn"><h3>Add to cart</h3></button>
         <a href="shopping-cart.html">
-        <button class="btn">Checkout</button>
+        <button class="btn"><h3>Checkout</h3></button>
         </a>
       </div>
     </div>
