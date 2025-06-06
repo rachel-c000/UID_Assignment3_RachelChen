@@ -1075,6 +1075,21 @@ column-gap: 30px;
       background-color: transparent;
     }
 
+    /*checked-out page*/
+    .checked-out {
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .checked-out a {
+      color: var(--coolbrown1-color);
+      text-decoration: none;
+      opacity: 0.5;
+    }
+
     .product-detail {
     display: flex;
     flex-direction: column;
