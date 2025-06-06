@@ -6,6 +6,11 @@
   <title>Shopping Cart</title>
   <link rel="stylesheet" href="stylesheet.css" />
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+  <style>
+  body {
+  background-color: var(--creme-color);
+}
+  </style>
 </head>
 
 <body>
@@ -62,46 +67,72 @@
 
   <div class="checkout">
  
-      <div class="cart-details">
+     <div class="cart-details">
+  <h1>MY CART</h1>
 
-      <h1>MY CART</h1>
-        <div class="item">
-          <img src="media/shopping-cart/cajun-spice-png.png" alt="Cajun Spice" width="30%">
-        <div>
-          <div class="product-detail">
-          <h5>Organic Ethiopian Berbere</h5>
-          <div class="quantity-box">
-            <button>-</button>
-            <span style="margin: 0 10px;">3</span>
-            <button>+</button>
-          </div>
+  <div class="item">
+    <img src="media/shopping-cart/cajun-spice-png.png" alt="Cajun Spice" width="30%">
+    <div>
+      <div class="product-detail">
+        <span style="padding-left: 10px;"><h2>Organic Ethiopian Berbere</h2></span>
+        <div class="quantity-selector">
+          <button class="qty-btn" onclick="updateQuantity(-1)">−</button>
+          <input type="text" id="cart-quantity" value="3" readonly>
+          <button class="qty-btn" onclick="updateQuantity(1)">+</button>
         </div>
-
-        
-        </div>
-        <div style="margin-left:auto;">$13</div>
-      </div>
-
-      <div class="order-summary">
-        <label for="discount">ORDER SUMMARY</label><br><br>
-        <input type="text" id="discount" placeholder="Discount number">
-        <button>Apply</button>
-      </div>
-
-      <div class="summary">
-        <p>Subtotal: $13</p>
-        <p>Discount: $0</p>
-        <p>Delivery Fee: $3</p>
-      </div>
-
-      <div class="total">
-        <h4><span style="color: var(--creme-color);">Total: $16</span></h4>
       </div>
     </div>
+    <div style="margin-right:auto; padding: 25px 0 0 100px;"><strong id="item-price">$13</strong></div>
+  </div>
+
+  <div class="order-summary">
+    <label for="discount"><h3>ORDER SUMMARY</h3></label>
+    <input type="text" id="discount" placeholder="Discount number">
+    <button>Apply</button>
+  </div>
+
+  <div class="summary">
+    <h4>Subtotal: $<span id="subtotal">13</span></h4>
+    <h4>Discount: $<span id="discount-amount">0</span></h4>
+    <h4>Delivery Fee: $<span id="delivery-fee">3</span></h4>
+  </div>
+
+  <div class="total">
+    <h1><span style="color: var(--creme-color);">Total: $<span id="total">16</span></span></h1>
+  </div>
+</div>
+
+<script>
+  const quantityInput = document.getElementById("cart-quantity");
+  const itemPrice = 13;
+  const deliveryFee = 3;
+
+  function updateQuantity(change) {
+    let quantity = parseInt(quantityInput.value);
+    quantity += change;
+    if (quantity < 1) quantity = 1;
+    quantityInput.value = quantity;
+    updateTotals();
+  }
+
+  function updateTotals() {
+    const quantity = parseInt(quantityInput.value);
+    const subtotal = quantity * itemPrice;
+    const discount = 0; // You can add discount logic here later
+    const total = subtotal - discount + deliveryFee;
+
+    document.getElementById("subtotal").textContent = subtotal;
+    document.getElementById("discount-amount").textContent = discount;
+    document.getElementById("total").textContent = total;
+  }
+
+  // Initialize totals on load
+  updateTotals();
+</script>
 
     <div class="card-details">
-      <h2>CARD DETAILS</h2>
-      <p>Select Card Type</p>
+      <h1>CARD DETAILS</h1>
+      <h4>Select Card Type</h4>
       <p>
         <img src="https://img.icons8.com/color/48/mastercard-logo.png" width="30" />
         <img src="https://img.icons8.com/color/48/visa.png" width="30" />
@@ -109,9 +140,9 @@
         <img src="https://img.icons8.com/color/48/paypal.png" width="30" />
         <img src="https://img.icons8.com/color/48/google-pay.png" width="30" />
       </p>
-      <p>Card Number</p>
-      <input type="text" placeholder="__________________________" style="width: 20%; padding: 10px;">
-      <p>Expiry Date &nbsp;&nbsp; CCV</p>
+      <h4>Card Number</h4>
+      <input type="text" placeholder="__________________________" style="width: 50%; padding: 10px;">
+      <h4>Expiry Date &nbsp;&nbsp; CCV</h4>
       <input type="text" placeholder="__/__/__" style="width: 5%; padding: 10px;">
       <input type="text" placeholder="___" style="width: 5%; padding: 10px;">
     </div>

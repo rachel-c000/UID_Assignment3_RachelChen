@@ -3,7 +3,7 @@
 <head>
       <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teeny Tiny Spice Company</title>
+  <title>Product Page</title>
   <link rel="stylesheet" href="stylesheet.css" />
     <style>
 body {
@@ -94,6 +94,7 @@ body {
         <div class="product-information">
         <h1>Organic Montréal Seasoning</h1>
         <div class="rating">★★★★★ 109 Reviews</div>
+        <h2>$13.40</h2>
         <p class="description">
           Ethiopian Berbère is a hot and flavorful mix of more than a dozen ingredients. It can be used as a dry or wet rub on roasted meats or tofu. Add it to stews and sauces for a bold and full flavor profile...
         </p>
@@ -101,17 +102,53 @@ body {
           Net Weight/Shipping Weight<br>
           80g (2.82 oz) / 185g (6.5 oz)
         </div>
-<div class="quantity-selector">
-  <label>Quantity</label>
-  <button class="qty-btn" id="decrease">−</button>
-  <span id="quantity-value">1</span>
-  <button class="qty-btn" id="increase">+</button>
+<div class="quantity-wrapper">
+    <label for="quantity">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="qty-btn" id="decrease">−</button>
+      <input type="text" id="quantity" value="1" readonly>
+      <button class="qty-btn" id="increase">+</button>
+    </div>
+
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+    
+  </div>
+
+  <!-- Cart Popup -->
+ <!-- index.html -->
+<button class="btn" onclick="addToCart()">Add to cart</button>
+
+<div id="cart-popup" style="display:none; position:fixed; top:20%; left:30%; background:white; border:1px solid #ccc; padding:20px;">
+  <p>Item added to cart!</p>
+  <p>Quantity: <span id="popup-qty">1</span></p>
+  <p>Total: $<span id="popup-total">13.40</span></p>
+  <button onclick="window.location.href='shopping-cart.html'">Go to Cart</button>
+  <button onclick="document.getElementById('cart-popup').style.display='none'">Cancel</button>
 </div>
-        <button class="btn"><h3>Add to cart</h3></button>
+
+<script>
+  const quantityInput = document.getElementById("quantity");
+  const itemPrice = 13.40;
+
+  function addToCart() {
+    const qty = parseInt(document.getElementById("quantity").value);
+    localStorage.setItem("cartQuantity", qty);
+    localStorage.setItem("cartPrice", itemPrice);
+    document.getElementById("popup-qty").innerText = qty;
+    document.getElementById("popup-total").innerText = (qty * itemPrice).toFixed(2);
+    document.getElementById("cart-popup").style.display = "block";
+
+    // Change cart icon state (optional example)
+    const cartIcon = document.querySelector(".cart-icon");
+    if (cartIcon) cartIcon.classList.add("filled");
+  }
+</script>
+   </div>
+    </div>
+    </div>
         <a href="shopping-cart.html">
-        <button class="btn"><h3>Checkout</h3></button>
-        </a>
-      </div>
+     <span style="display: flex; justify-content: end; padding: 0px 30px 30px 0px; margin-top: -100px;"><button class="checkout-btn">Checkout</button></span>
+    </a>
     </div>
 
 <!--recipes-carousal--->
@@ -263,7 +300,7 @@ body {
       </div>
       <div class="their-review">
         <div>★★★★★</div>
-        <p><span style="font-weight: 100;">The Moroccan seasoning is fire 🔥 I use it on everything from roasted veggies to chicken. Plus, their recipe site is a goldmine!"</span></p>
+        <span style="font-weight: 30;"><p>The Moroccan seasoning is fire 🔥 I use it on everything from roasted veggies to chicken. Plus, their recipe site is a goldmine!"</p></span>
       </div>
     </div>
     <div class="review">
@@ -278,7 +315,7 @@ body {
       </div>
     <div class="review">
       <div class="customer-profile">
-      <img src="media/customer-profles/carlos.png" alt="Carlos">
+      <img src="media/customer-profiles/carlos.png" alt="Carlos">
       <h7>Carlos D. – Miami, FL</h7>
       </div>
       <div class="their-review">

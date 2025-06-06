@@ -89,18 +89,21 @@ document.getElementById('searchToggle').addEventListener('click', function () {
 
   const decreaseBtn = document.getElementById("decrease");
   const increaseBtn = document.getElementById("increase");
-  const quantityValue = document.getElementById("quantity-value");
-
-  let quantity = 1;
-
-  increaseBtn.addEventListener("click", () => {
-    quantity++;
-    quantityValue.textContent = quantity;
-  });
+  const quantityInput = document.getElementById("quantity");
 
   decreaseBtn.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-      quantityValue.textContent = quantity;
+    let value = parseInt(quantityInput.value, 10);
+    if (value > 1) {
+      quantityInput.value = value - 1;
     }
   });
+
+  increaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value, 10);
+    quantityInput.value = value + 1;
+  });
+
+  // spice carousel
+
+  
+
