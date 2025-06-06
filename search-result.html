@@ -6,9 +6,17 @@
   <title>Search Result</title>
   <link rel="stylesheet" href="stylesheet.css" />
     <style>
-    .body {
-        background-color: var(--creme-color);
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('media/page-backgrounds/search-result-backgound.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;         
+  background-position: top center;
+  background-attachment: relative;   
+  min-height: auto;
+  background-color: var(--creme-color);
+}
   </style>
 </head>
 
@@ -60,14 +68,18 @@
     </div>
   </div>
 
+<!--sort by-->
+
+ <iframe src="sort-by.html" style="width: 100%; height: 80px; border: none; padding: 10px 10px -50px 10px;display: flex; align-items: end;"></iframe>
+
 <div class="search-result-title">
     <h2>"spicy"</h2>
     <div class="section">
 
   <div class="card-container">
-    <div class="card" style="background-color: var(--coolbrown2-color);">
-      <img src="media/spices/harrisa.png" alt="Harissa" class="hover-swap">
-      <h2>Harissa</h2>
+    <div class="card" style="background-color: var(--lightblue-color);">
+      <img src="media/spices/cajun-spice.png" alt="Cajun" class="hover-swap">
+      <h2>Cajun</h2>
       <div class="stars">★★★★★</div>
       <p class="price">$13.40</p>
     </div>
@@ -95,10 +107,10 @@
       <p class="price">$13.40</p>
     </div>
 
-    <div class="card" style="background-color: var(--lightblue-color);">
+    <div class="card" style="background-color: var(--darkbrown-color);">
       <a href="product-page.html">
-      <img src="media/spices/cajun-spice.png" alt="Cajun Spice" class="hover-swap" data-alt="img2-hover.jpg"></a>
-      <h2>Cajun Spice</h2>
+      <img src="media/spices/harrisa.png" alt="Harrisa" class="hover-swap" data-alt="img2-hover.jpg"></a>
+      <h2>Harrisa</h2>
       <div class="stars">★★★★★</div>
       <p class="price">$13.40</p>
     </div>
@@ -114,10 +126,10 @@
     </div>
 
     <div class="recommendations-banner">
-    <h4>RECOMMENDATIONS</h4>
+    <h4 style="color: var(--creme-color); font-size: 60px; display: flex; justify-content: start; padding-left: 50px;">RECOMMENDATIONS</h4>
     </div>
 
-    <h2>SIMILAR TASTES</h2>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">SIMILAR TASTES</p>
      <div class="card-container">
     <div class="card" style="background-color: var(--red-color);">
       <img src="media/spices/garam-masala.png" alt="Garam Masala" class="hover-swap" data-alt="img2-hover.jpg">
@@ -141,7 +153,7 @@
     </div>
   </div>
 
-<h2>WHAT'S POPULAR</h2>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">WHAT'S POPULAR</p>
         <div class="card-container">
     <div class="card" style="background-color: var(--warmbrown1-color);">
       <img src="media/spices/ethiopian-berbere.png" alt="Ethiopian Berbere" class="hover-swap" data-alt="img2-hover.jpg">
@@ -165,7 +177,7 @@
     </div>
   </div>
 
-<h2>BULK</h2>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">BULK</p>
  <div class="card-container">
     <div class="card" style="background-color: var(--grey-color);">
       <img src="media/spices/afghani-fill.png" alt="Afghani Fill" class="hover-swap" data-alt="img2-hover.jpg">
@@ -189,7 +201,7 @@
     </div>
   </div>
 
-    <h2>GIFT PACKS</h2>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">GIFT PACKS</p>
  <div class="card-container">
     <div class="card" style="background-color: var(--pink-color);">
       <img src="media/spices/african-spice-blends.png" alt="African Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">

@@ -87,9 +87,10 @@ document.getElementById('searchToggle').addEventListener('click', function () {
 
 // quantity button
 
+  const quantityInput = document.getElementById("quantity");
   const decreaseBtn = document.getElementById("decrease");
   const increaseBtn = document.getElementById("increase");
-  const quantityInput = document.getElementById("quantity");
+  const itemPrice = 13.40;
 
   decreaseBtn.addEventListener("click", () => {
     let value = parseInt(quantityInput.value, 10);
@@ -102,6 +103,19 @@ document.getElementById('searchToggle').addEventListener('click', function () {
     let value = parseInt(quantityInput.value, 10);
     quantityInput.value = value + 1;
   });
+
+  function addToCart() {
+    const qty = parseInt(quantityInput.value);
+    localStorage.setItem("cartQuantity", qty);
+    localStorage.setItem("cartPrice", itemPrice);
+    document.getElementById("popup-qty").innerText = qty;
+    document.getElementById("popup-total").innerText = (qty * itemPrice).toFixed(2);
+    document.getElementById("cart-popup").style.display = "block";
+
+    const cartIcon = document.querySelector(".cart-icon");
+    if (cartIcon) cartIcon.classList.add("filled");
+  }
+
 
   // spice carousel
 

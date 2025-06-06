@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sort By Filter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select {
+      padding: 8px;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+
+
+    .product h4 {
+      margin: 0 0 8px;
+    }
+
+    .card {
+  width: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 20px;
+  color: var(--creme-color);
+  margin: 10px 0;
+}
+
+.stars {
+  font-size: 22px;
+  color: var(--creme-color);
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 18px;
+  color: var(--creme-color);
+}
+  </style>
+</head>
+<body>
+
+  <label for="filter">Sort by:</label>
+  <select id="filter" onchange="filterProducts()">
+    <option value="all">All</option>
+    <option value="similar">Similar Tastes</option>
+    <option value="popular">What's Popular</option>
+    <option value="bulk">Bulk</option>
+    <option value="gift">Gift Packs</option>
+  </select>
+
+  </div>
+
+  <script>
+    function filterProducts() {
+      const filter = document.getElementById("filter").value;
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        if (filter === "spicy" || product.classList.contains(filter)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+
+    // Show all by default
+    filterProducts();
+  </script>
+
+</body>
+</html>

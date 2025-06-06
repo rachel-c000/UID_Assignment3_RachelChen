@@ -774,9 +774,9 @@ column-gap: 30px;
 }
 
 .recommendations-banner {
-  background-color: var(--darkbrown-colour);
-  fill: var(--darkbrown-color);
+  background-color: var(--darkbrown-color);
   width: 100%;
+  height: 100px;
 }
 
 .londrina-solid-regular {
@@ -836,6 +836,11 @@ column-gap: 30px;
       opacity: 0.5;
       padding: 0 20px 20px 20px;
     }
+
+    .page-link p {
+  font-weight: bold; /* or 600, 700, etc. */
+}
+
 
   .page-link a {
     padding: 10px;

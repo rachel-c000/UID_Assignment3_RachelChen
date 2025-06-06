@@ -9,11 +9,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(''); /* update with your path */
+  background-image: url('media/page-backgrounds/product-page-background.5.png'); 
   background-repeat: no-repeat;
-  background-size: cover;         /* or use 'contain' or '100% auto' */
+  background-size: cover;         
   background-position: top center;
-  background-attachment: relative;   /* optional: makes it stay during scroll */
+  background-attachment: relative;   
   min-height: auto;
   background-color: var(--creme-color);
 }
@@ -103,20 +103,18 @@ body {
           80g (2.82 oz) / 185g (6.5 oz)
         </div>
 <div class="quantity-wrapper">
-    <label for="quantity">Quantity:</label>
-    <div class="quantity-selector">
-      <button class="qty-btn" id="decrease">−</button>
-      <input type="text" id="quantity" value="1" readonly>
-      <button class="qty-btn" id="increase">+</button>
-    </div>
+  <label for="quantity">Quantity:</label>
+  <div class="quantity-selector">
+    <button class="qty-btn" id="decrease" type="button">−</button>
+    <input type="text" id="quantity" value="1" readonly>
+    <button class="qty-btn" id="increase" type="button">+</button>
+  </div>    
+</div>
 
-    <button class="btn" onclick="addToCart()">Add to Cart</button>
-    
-  </div>
-
-  <!-- Cart Popup -->
- <!-- index.html -->
+<!-- Cart Popup -->
 <button class="btn" onclick="addToCart()">Add to cart</button>
+<a href="shopping-cart.html">
+<button class="btn">Go to Cart</button></a>
 
 <div id="cart-popup" style="display:none; position:fixed; top:20%; left:30%; background:white; border:1px solid #ccc; padding:20px;">
   <p>Item added to cart!</p>
@@ -126,155 +124,43 @@ body {
   <button onclick="document.getElementById('cart-popup').style.display='none'">Cancel</button>
 </div>
 
+</div> </div>
+
 <script>
   const quantityInput = document.getElementById("quantity");
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
   const itemPrice = 13.40;
 
+  decreaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value, 10);
+    if (value > 1) {
+      quantityInput.value = value - 1;
+    }
+  });
+
+  increaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value, 10);
+    quantityInput.value = value + 1;
+  });
+
   function addToCart() {
-    const qty = parseInt(document.getElementById("quantity").value);
+    const qty = parseInt(quantityInput.value, 10); // Use the same variable
     localStorage.setItem("cartQuantity", qty);
     localStorage.setItem("cartPrice", itemPrice);
     document.getElementById("popup-qty").innerText = qty;
     document.getElementById("popup-total").innerText = (qty * itemPrice).toFixed(2);
     document.getElementById("cart-popup").style.display = "block";
 
-    // Change cart icon state (optional example)
+    // Optional: Change cart icon state
     const cartIcon = document.querySelector(".cart-icon");
     if (cartIcon) cartIcon.classList.add("filled");
   }
 </script>
-   </div>
-    </div>
-    </div>
-        <a href="shopping-cart.html">
-     <span style="display: flex; justify-content: end; padding: 0px 30px 30px 0px; margin-top: -100px;"><button class="checkout-btn">Checkout</button></span>
-    </a>
-    </div>
 
 <!--recipes-carousal--->
-
-<div class="recipes-carousel">
-  <div class="slide active">
-  <div class="recipes-image">
-  <img src="media/recipes/Chicken Cordon Bleu-ish.png" height="30%" width="auto">
-  </div>
-  <div class="recipes-text">
-    <h2>Chicken Cordon Bleu-ish</h2>
-  <div class="ingrediants-gallery">
-    <div class="ingrediant"><h5>Certified Organic</h5></div>
-    <div class="ingrediant"><h5>Certified Kosher</h5></div>
-    <div class="ingrediant"><h5>Gluten Free</h5></div>
-  </div>
-  <div class="recipe-description">
-    <p>A cozy twist on the classic, this comforting dish wraps tender chicken around melty cheese and savory ham — crispy on the outside, creamy and satisfying on the inside.</p>
-    </div>
-  </div>
-</div>
-  <div class="slide">
-  <div class="recipes-image">
-  <img src="media/recipes/Wild Daylilly and Egg Soup.png" height="30%" width="auto">
-  </div>
-  <div class="recipes-text">
-    <h2>Wild Daylilly and Egg Soup</h2>
-  <div class="ingrediants-gallery">
-    <div class="ingrediant"><h5>Szechuan Spice</h5></div>
-    <div class="ingrediant"><h5>Chinese Five Spice</h5></div>
-    <div class="ingrediant"><h5>Xinjiang Spice</h5></div>
-  </div>
-  <div class="recipe-description">
-    <p>A delicate, earthy broth that celebrates nature’s foraged beauty — wild daylilies and gently poached egg come together in a bowl of pure, peaceful nourishment.</p>
-    </div>
-  </div>
-</div>
-  <div class="slide">
-  <div class="recipes-image">
-  <img src="media/recipes/Spiced Chocolate Mousse.png" height="30%" width="auto">
-  </div>
-  <div class="recipes-text">
-    <h2>Spiced Chocolate Mousse</h2>
-  <div class="ingrediants-gallery">
-    <div class="ingrediant"><h5>Chocolate Chilli</h5></div>
-    <div class="ingrediant"><h5>Garam Masala</h5></div>
-    <div class="ingrediant"><h5>French Four Spice</h5></div>
-  </div>
-  <div class="recipe-description">
-    <p>Rich, silky chocolate with a warming kiss of spice — this mousse is like a hug in dessert form, perfect for slow moments and sweet cravings.</p>
-    </div>
-  </div>
-</div>
-  <div class="slide">
-  <div class="recipes-image">
-  <img src="media/recipes/Breakfast Lettuce Taco Bowl.png" height="30%" width="auto">
-  </div>
-  <div class="recipes-text">
-    <h2>Breakfast Lettuce Taco Bowl</h2>
-  <div class="ingrediants-gallery">
-    <div class="ingrediant"><h5>Oxacan Adobo</h5></div>
-    <div class="ingrediant"><h5>Seaside Spice</h5></div>
-    <div class="ingrediant"><h5>Tolucan Chorizo</h5></div>
-  </div>
-  <div class="recipe-description">
-    <p>Fresh, fun, and full of morning energy — crisp lettuce cradles savory breakfast favorites in a light and cheerful bowl that starts the day right.</p>
-    </div>
-  </div>
-</div>
-  <div class="slide">
-  <div class="recipes-image">
-  <img src="media/recipes/Salmon en Papilotte.png" height="30%" width="auto">
-  </div>
-  <div class="recipes-text">
-    <h2>Salmon en Papilotte</h2>
-  <div class="ingrediants-gallery">
-    <div class="ingrediant"><h5>Hot Italian Spice</h5></div>
-    <div class="ingrediant"><h5>Seaside Spice</h5></div>
-    <div class="ingrediant"><h5>West African Curry</h5></div>
-  </div>
-  <div class="recipe-description">
-    <p>An elegant parcel of perfectly steamed salmon, gently cooked in parchment with herbs and vegetables — opening it feels like unwrapping a warm, fragrant gift.</p>
-    </div>
-  </div>
-</div>
-</div> 
-<div class="controls">
-  <button class="image-button" onclick="moveCarousel(-1)">
-    <img src="media/animated carousal/spoon left.png" alt="Previous"/>
-  </button>
-
-  <button class="image-button" onclick="moveCarousel(1)">
-    <img src="media/animated carousal/spoon right.png" alt="Next"/>
-  </button>
-</div>
-</div>
-
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      slide.style.opacity = '0'; // hide
-    });
-
-    slides[index].classList.add('active');
-    slides[index].style.opacity = '1'; // show
-  }
-
-  function moveCarousel(direction) {
-    currentSlide += direction;
-
-    if (currentSlide >= slides.length) {
-      currentSlide = 0;
-    } else if (currentSlide < 0) {
-      currentSlide = slides.length - 1;
-    }
-
-    showSlide(currentSlide);
-  }
-
-  // Optional: Initialize visibility
-  showSlide(currentSlide);
-</script>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">RECIPES WITH FLAVOUR</p>
+ <iframe src="recipe-carousel.html" style="width: 100%; height: 600px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
   <div class="reviews">
 
