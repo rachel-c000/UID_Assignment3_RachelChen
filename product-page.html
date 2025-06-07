@@ -92,7 +92,7 @@ body {
         </div>
 
         <div class="product-information">
-        <h1>Organic Montréal Seasoning</h1>
+        <h1>Cajun</h1>
         <div class="rating">★★★★★ 109 Reviews</div>
         <h2>$13.40</h2>
         <p class="description">
@@ -108,23 +108,30 @@ body {
     <button class="qty-btn" id="decrease" type="button">−</button>
     <input type="text" id="quantity" value="1" readonly>
     <button class="qty-btn" id="increase" type="button">+</button>
-  </div>    
+
+    
+  </div>  
+  <!-- Add to Cart Button -->
+   <div class="to-cart-buttons" style="display: flex; flex-direction: row; justify-content: space-between;column-gap: 10px;">
+<button class="btn" onclick="addToCart()">Add to Cart</button>
+<a href="shopping-cart.html"><button class="btn" onclick="addToCart()">Checkout</button></a></div> 
+</div>
+</div>
 </div>
 
-<!-- Cart Popup -->
-<button class="btn" onclick="addToCart()">Add to cart</button>
-<a href="shopping-cart.html">
-<button class="btn">Go to Cart</button></a>
 
-<div id="cart-popup" style="display:none; position:fixed; top:20%; left:30%; background:white; border:1px solid #ccc; padding:20px;">
-  <p>Item added to cart!</p>
-  <p>Quantity: <span id="popup-qty">1</span></p>
-  <p>Total: $<span id="popup-total">13.40</span></p>
-  <button onclick="window.location.href='shopping-cart.html'">Go to Cart</button>
-  <button onclick="document.getElementById('cart-popup').style.display='none'">Cancel</button>
+
+
+
+<!-- Cart Summary Popup -->
+<div id="cart-summary-popup" style="display:none; position:fixed; top:20px; right:20px; background: var(--creme-color); border:1px solid var(--darkbrown-color); color: var(--darkbrown-color); padding:20px; border-radius: 15px; width: 250px; z-index: 1000;">
+  <h3 style="margin-top: 0;">🛒 Cart Summary</h3>
+  <p>Quantity: <span id="summary-qty">1</span></p>
+  <p>Unit Price: $<span id="summary-price">13.40</span></p>
+  <p>Total: $<span id="summary-total">13.40</span></p>
+  <button onclick="closeCartSummary()">Keep Shopping</button>
+  <button onclick="window.location.href='shopping-cart.html'">Checkout</button>
 </div>
-
-</div> </div>
 
 <script>
   const quantityInput = document.getElementById("quantity");
@@ -145,16 +152,25 @@ body {
   });
 
   function addToCart() {
-    const qty = parseInt(quantityInput.value, 10); // Use the same variable
+    const qty = parseInt(quantityInput.value, 10);
+    const total = (qty * itemPrice).toFixed(2);
+
+    // Store in localStorage
     localStorage.setItem("cartQuantity", qty);
     localStorage.setItem("cartPrice", itemPrice);
-    document.getElementById("popup-qty").innerText = qty;
-    document.getElementById("popup-total").innerText = (qty * itemPrice).toFixed(2);
-    document.getElementById("cart-popup").style.display = "block";
 
-    // Optional: Change cart icon state
-    const cartIcon = document.querySelector(".cart-icon");
-    if (cartIcon) cartIcon.classList.add("filled");
+    // Update popup content
+    document.getElementById("summary-qty").innerText = qty;
+    document.getElementById("summary-price").innerText = itemPrice.toFixed(2);
+    document.getElementById("summary-total").innerText = total;
+
+    // Show popup
+    const popup = document.getElementById("cart-summary-popup");
+    popup.style.display = "block";
+  }
+
+  function closeCartSummary() {
+    document.getElementById("cart-summary-popup").style.display = "none";
   }
 </script>
 
@@ -162,15 +178,22 @@ body {
 <p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">RECIPES WITH FLAVOUR</p>
  <iframe src="recipe-carousel.html" style="width: 100%; height: 600px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
+ <!--more-button-->
+  <div class="more-button-out">
+<div style="text-align: right; margin-top: 20px;">
+  <button id="more-button"><span style="color: var(--creme-color);"><h2>SHARE YOUR FLAVOUR STORY</h2></span></button>
+</div>
+</div>
+
   <div class="reviews">
 
-    <div class="review-intro">
+    <div class="review-intro" style="margin-top: -200px; margin-left: 100px;">
     <div class="review-intro-title">
-    <h2>CUSTOMER REVIEWS</h2>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center;">CUSTOMER REVIEWS</p>
     </div>
     <div class="review-intro-stats">
     <div class="review-intro-stats-left">
-    <div class="review-score">5.0<br><span style="font-size: 1rem;">109 reviews</span></div>
+    <div class="review-score"><h1>5.0<br><span style="font-size: 1rem;">109 reviews</h1></span></div>
     </div>
     <div class="review-intro-stats-right">
     <img src="media/review-bar.png" alt="review bar" width="300px" height="auto">
@@ -213,7 +236,7 @@ body {
   </div>
 
   <!--related products-->
-  <h1><span style="padding-left: 30px;">RELATED PRODUCTS</span></h1>
+  <h1><span style="padding-left: 30px; padding-bottom: -100px;">RELATED PRODUCTS</span></h1>
     <div class="related-section" style="display: flex; flex-direction: row;">
 
   <div class="related-card-container">
