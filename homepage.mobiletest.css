@@ -20,12 +20,16 @@
     --grey-color: #D2D1CF;
 }
 
-  body {
+  html, body {
     position: relative;
     min-height: 100vh;
     background-color: #f5f0e6;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
+
   .full-vertical-bg {
     position: absolute;
     top: 0; left: 0;
@@ -109,6 +113,126 @@ p {
   font-weight: 900;
 }
 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.logo-container img:hover {
+  filter: brightness(40%) saturate(100%) invert(27%) sepia(71%) saturate(540%) hue-rotate(345deg) brightness(102%) contrast(95%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkbrown-color);
+  padding: 10px 40px 0px 40px;
+  position: relative; /* Required for z-index to work */
+  z-index: 1000;  
+  height: 10vh;     /* Make sure it's above the banner */
+}
+
+.nav-icon {
+  width: 10vw;
+  max-width: 60px;
+  height: auto;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  z-index: 1001;        /* This ensures the dropdown menu is above other elements */
+  position: relative;   /* Already set in mobile styles */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--creme-color);
+ font-size: 1rem; /* smaller size on mobile */
+  transition: color 0.3s ease;
+    display: block;        /* makes the entire width clickable */
+  padding: 10px 0;       /* vertical padding */
+  white-space: nowrap;   /* prevent wrapping */
+}
+
+.nav-links li a:hover {
+  color: #f39c12;
+}
+
+.nav-links li {
+  width: 100px;          /* fixed width for each nav item */
+  text-align: center;    /* center the text inside */
+  padding: 0px;
+}
+
+.nav-links img {
+    width: 20vw;
+    height: auto;
+}
+
+/* Hamburger menu (mobile only) */
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    align-items: center;
+  }
+
+    .nav-toggle {
+    display: block;
+    padding-bottom: 10px;
+    color: var(--creme-color);
+    background-color: var(--darkbrown-color);
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--darkbrown-color);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 30vw;
+    padding: 0;
+    left: 300px;
+    right: 0;
+    margin: 0;            /* Remove any margin */
+    box-sizing: border-box; /* So padding doesn't break layout if you add some */
+  }
+
+  .nav-links li {
+     font-size: 75%; /* smaller size on mobile */
+  }
+
+}
+
+.nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 0;
+  }
+
+
 /*footer*/
 
 footer {
@@ -179,13 +303,6 @@ footer a {
       font-family: 'Roboto', sans-serif;
     }
 
-    body {
-      background: #fffaf3;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
     header, footer {
       background: #3a1f0e;
       color: white;
@@ -195,28 +312,6 @@ footer a {
       align-items: center;
     }
 
-    .navbar {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    height: 60px; /* or whatever height you need */
-    display: flex;
-    align-items: center; /* vertical alignment */
-}
-
-.navbar img:hover {
-  transform: scale(1.05);
-  filter: brightness(40%) saturate(100%) invert(27%) sepia(71%) saturate(540%) hue-rotate(345deg) brightness(102%) contrast(95%);
-}
-
-.nav-icon {
-  width: 24px;   /* or whatever size you want */
-  height: 24px;
-  object-fit: contain;
-  padding: 20px;
-}
-
 .banner-wrapper {
   position: relative;
   top: 0px;
@@ -224,7 +319,7 @@ footer a {
   height: fit-content; /* adjust based on image size */
   overflow: hidden;
   background: var(--grey-color);
-  z-index: 9999;
+  z-index: 1;
   border-bottom: 1px solid #ccc;
 }
 
@@ -639,28 +734,7 @@ padding-bottom: -30px;
       height: 350px;      
       background-color: var(--creme-color);        
     }
-    .nav-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.7);
-      border: none;
-      font-size: 2em;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-    }
-
-    .nav-left {
-      left: 10px;
-    }
-
-    .nav-right {
-      right: 10px;
-      display: flex;
-      flex-direction: row;
-    }
-
+    
     #searchBar {
   display: none;
   padding: 5px 10px;
@@ -669,12 +743,6 @@ padding-bottom: -30px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
-.nav-search {
-  display: flex;
-  align-items: center;
-}
-
 
 /*search-result*/
 
