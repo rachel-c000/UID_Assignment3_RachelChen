@@ -118,8 +118,6 @@ body {
     <button class="qty-btn" id="decrease" type="button">−</button>
     <input type="text" id="quantity" value="1" readonly>
     <button class="qty-btn" id="increase" type="button">+</button>
-
-    
   </div>  
   <!-- Add to Cart Button -->
    <div class="to-cart-buttons" style="display: flex; flex-direction: row; justify-content: space-between;column-gap: 10px;">
@@ -185,7 +183,7 @@ body {
 </script>
 
 <!--recipes-carousal--->
-<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">RECIPES WITH FLAVOUR</p>
+<p class="outline-text">RECIPES WITH FLAVOUR</p>
  <iframe src="recipe-carousel.html" style="width: 100%; height: 600px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
  <!--more-button-->
@@ -195,6 +193,7 @@ body {
 </div>
 </div>
 
+<!--reviews-->
   <div class="reviews">
 
     <div class="review-intro" style="margin-top: -200px; margin-left: 100px;">
@@ -246,71 +245,80 @@ body {
   </div>
 
   <!--related products-->
-  <h1><span style="padding-left: 30px; padding-bottom: -100px;">RELATED PRODUCTS</span></h1>
-    <div class="related-section" style="display: flex; flex-direction: row;">
 
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--orange-color); width: 120px; align-items: center;">
-      <img src="media/spices/afghani.png" alt="Afghani" width="70px">
-      <h2><span style="font-size: 30px;">Afghani</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
+  <h1 class="related-title">RELATED PRODUCTS</h1>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">SIMILAR TASTES</p>
+     <div class="card-container">
+    <div class="card" style="background-color: var(--red-color);">
+      <img src="media/spices/garam-masala.png" alt="Garam Masala" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Garam Masala<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--orange-color);">
+      <img src="media/spices/afghani.png" alt="Afghani" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Afghani<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--skin-color);">
+      <img src="media/spices/himalayan-pink-salt.png" alt="Himalayan Pink Salt" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Himalayn Pink Salt<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--pink-color); width: 120px; align-items: center;">
-      <img src="media/spices/za'atar.png" alt="Za' atar" width="40px">
-      <h2><span style="font-size: 30px;">Za' atar</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">WHAT'S POPULAR</p>
+        <div class="card-container">
+    <div class="card" style="background-color: var(--warmbrown1-color);">
+      <img src="media/spices/ethiopian-berbere.png" alt="Ethiopian Berbere" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Ethiopian Berbere<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--pink-color);">
+      <img src="media/spices/za'atar.png" alt="Za'atar" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Za'atar<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--yellow-color);">
+      <img src="media/spices/british-curry.png" alt="British Curry" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>British Curry<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--yellow-color); width: 120px; align-items: center;">
-      <img src="media/spices/british-curry.png" alt="British Curry" width="40px">
-      <h2><span style="font-size: 30px;">British Curry</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">BULK</p>
+ <div class="card-container">
+    <div class="card" style="background-color: var(--grey-color);">
+      <img src="media/spices/afghani-fill.png" alt="Afghani Fill" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Afghani - 1lb<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--grey-color);">
+      <img src="media/spices/british-curry-fill.png" alt="British Curry - 1lb" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>British Curry - 1lb<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--grey-color);">
+      <img src="media/spices/cajun-fill.png" alt="Cajun Spice - 1lb" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Cajun - 1lb<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--lightblue-color); width: 120px; align-items: center;">
-      <img src="media/spices/cajun-spice.png" alt="Cajun" width="40px">
-      <h2><span style="font-size: 30px;">Cajun</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
+<p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">GIFT PACKS</p>
+ <div class="card-container">
+    <div class="card" style="background-color: var(--pink-color);">
+      <img src="media/spices/african-spice-blends.png" alt="African Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>African Spice Blends<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--blue-color);">
+      <img src="media/spices/grilling-spice-blends.png" alt="Grilling Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Grilling Spice Blends<br>★★★★★<br>$13.40</p>
+    </div>
+
+    <div class="card" style="background-color: var(--purple-color);">
+      <img src="media/spices/indian-spice-blends.png" alt="Indian Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
+      <p>Indian Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
   </div>
-
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--red-color); width: 120px; align-items: center;">
-      <img src="media/spices/garam-masala.png" alt="Garam Masala" width="40px">
-      <h2><span style="font-size: 30px;">Garam Masala</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
-    </div>
-  </div>
-
-  <div class="related-card-container">
-    <div class="card" style="background-color: var(--skin-color); width: 120px; align-items: center;">
-      <img src="media/spices/himalayan-pink-salt.png" alt="Himalayan Pink Salt" width="40px">
-      <h2><span style="font-size: 30px;">Himalayan Pink Salt</span></h2>
-      <div class="stars">★★★★★</div>
-      <p class="price" style="font-size: 10px;">$13.40</p>
-    </div>
-  </div>
-
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
+</div>
 
 <!--animated banner--->
 <div class="banner-wrapper">
