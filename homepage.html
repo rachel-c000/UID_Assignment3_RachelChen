@@ -29,9 +29,10 @@ body {
 
 </head>
 
-  <!--navbar--->
+
 <body>
 
+  <!--navbar--->
   <nav class="navbar">
     <div class="logo-container">
       <a href="homepage.html"><img src="media/nav-bar/logo-icon.png" alt="Logo" class="nav-icon" /></a>
@@ -217,9 +218,8 @@ body {
 </div>
 
 <!--photo-gallery--->
-
-<div class="photo-gallery-title">
 <p class="outline-text">SPICE SHAPING OUR MOMENTS</p>
+<div class="photo-gallery-title" style="width: 80vw; display: flex; justify-content: center; align-items: center;">
 </div>
   <div class="gallery">
     <img src="media/photo-gallery/photo.6.png" alt="Gallery Image 1" class="gallery-img" />
@@ -241,51 +241,42 @@ body {
   <script src="script.js"></script>
 
 <!--reviews--->
-
-<div class="carousel-wrapper">
-    <div class="carousel" id="carousel">
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Jordan T. – Brooklyn, NY</strong></span><br>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
+<p class="outline-text">WHAT CUSTOMERS SAY</p>
+<div class="review-box-wrapper">
+    <div class="scroll-padding">
+  <div class="review-box-carousel" id="review-carousel">
+    <div class="review-box">
+      <p><span class="reviewer">Jordan T. – Brooklyn, NY</span><br>★★★★★<br>“I’ve tried a lot of spice brands but Teeny Tiny has defined the word addictive. So pure and flavor-filled. You’ll never go back.”</p>
     </div>
-      </div>
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Tracy M. – Sedona, US</strong></span><br>★★★★★<br>"You can smell the difference the moment you open the jar. Top-tier quality.</p>
+    <div class="review-box">
+      <p><span class="reviewer">Tracy M. – Sedona, US</span><br>★★★★★<br>"You can smell the difference the moment you open the jar. Top-tier quality."</p>
     </div>
-      </div>
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Matthew A. – Savannah, US</strong></span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
+    <div class="review-box">
+      <p><span class="reviewer">Matthew A. – Savannah, US</span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
     </div>
-      </div>
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Trasha J. – Quebec City, CA</strong></span><br>★★★★★<br>"My kitchen smells like a global market thanks to these spices. Amazing variety!"</p>
+    <div class="review-box">
+      <p><span class="reviewer">Trasha J. – Quebec City, CA</span><br>★★★★★<br>"My kitchen smells like a global market thanks to these spices. Amazing variety!"</p>
     </div>
-      </div>
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Nat K. – Key West, US</strong></span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
+    <div class="review-box">
+      <p><span class="reviewer">Nat K. – Key West, US</span><br>★★★★★<br>"Their blends are perfectly balanced — I used the taco seasoning and everyone asked for the recipe!"</p>
     </div>
-      </div>
-      <div class="box" style="border: 2px solid var(--darkbrown-color);">
-        <div class="review">
-      <p><span style="font-size: 30px;"><strong>Uta O. – Belize City, BZ</strong></span><br>★★★★★<br>"Fast delivery, eco-friendly packaging, and the spices were bursting with color and aroma."</p>
-    </div>
-      </div>
+    <div class="review-box">
+      <p><span class="reviewer">Uta O. – Belize City, BZ</span><br>★★★★★<br>"Fast delivery, eco-friendly packaging, and the spices were bursting with color and aroma."</p>
     </div>
   </div>
+  </div>
+</div>
 
-  <script>
-  const carousel = document.querySelector('.carousel');
+<script>
+  const carousel = document.getElementById('review-carousel');
 
   carousel.addEventListener('wheel', (e) => {
-    e.preventDefault(); // stop page from scrolling
-  const scrollSpeed = 3; // increase this to scroll further per tick
-  carousel.scrollLeft += e.deltaY * scrollSpeed;
+    e.preventDefault();
+    const scrollSpeed = 3;
+    carousel.scrollLeft += e.deltaY * scrollSpeed;
   });
 </script>
+
 
 <!--see our community-->
   <div class="more-button-out">

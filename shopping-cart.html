@@ -23,30 +23,37 @@ body {
 
 <body>
 <!--navbar--->
-<header class="navbar">
-  <div class="nav-left">
-    <a href="homepage.html">
-    <img src="media/nav-bar/logo-icon.png" class="nav-icon" style="width: 60px; height: 60px;"/>
-    </a>
-    <a href="homepage.html">
-    <img src="media/nav-bar/about-us-icon.png" class="nav-icon" style="width: 60px; height: 60px;" />
-  </div>
-  </a>
-  <div class="nav-right">
-    <div class="nav-search">
-      <a href="search-result.html">
-      <img src="media/nav-bar/search-icon.png" class="nav-icon" id="searchToggle" alt="Search Icon">
-      <input type="text" id="searchBar" placeholder="Search..." />
-      </a>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="homepage.html"><img src="media/nav-bar/logo-icon.png" alt="Logo" class="nav-icon" /></a>
     </div>
-    <a href="shopping-cart.html">
-    <img src="media/nav-bar/profile-icon.png" class="nav-icon" />
-    </a>
-    <a href="shopping-cart.html">
-    <img src="media/nav-bar/shopping-cart-icon.png" class="nav-icon" />
-    </a>
-  </div>
-</header>
+    <div class="nav-toggle" id="mobile-menu"><img src="media/nav-bar/toggle-icon.png"></div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="homepage.html">
+    <h2>ABOUT US</h2>
+  </a></li>
+      <li><a href="search-result.html">
+    <h2>SHOP</h2>
+      </a></li>
+      <li><a href="shopping-cart.html">
+    <h2>PROFILE</h2>
+    </a></li>
+      <li><a href="shopping-cart.html">
+    <h2>CART</h2>
+    </a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 <!--page link-->
   <div class="page-link">
@@ -142,7 +149,7 @@ body {
 
    
 
-  <!--footer--->
+<!--footer--->
 <footer class="footer">
   <section class="newsletter">
     <h2><span style="color: var(--creme-color);">FLAVOUR THAT SLAPS</span></h2>
@@ -151,15 +158,16 @@ body {
 
   <section class="footer-information">
     <div class="home-shop-help">
-    <p>Home</p>
-    <p>Shop</p>
-    <p>Help</p>
+    <a href="homepage.html"><p>Home</p></a>
+    <a href="search-result.html"><p>Shop</p></a>
+    <a href="shopping-cart.html"><p>Help</p></a>
     </div>
     <div class="footer-address">
     <p>P.O. Box 250<br>Spring City, UT 84662<br>info@teenytinyspice.com</p>
     </div>
   </section>
 </footer>
+
 
 </body>
 

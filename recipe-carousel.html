@@ -7,116 +7,199 @@
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --darkbrown-color: #30150D;
-      --creme-color: #F8F8EA;
-      --darkcreme-color: #c59f4d;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Londrina Solid", sans-serif;
-      background-color: var(--darkbrown-color);
-    }
-    
-    p {
-     font-family: "Londrina Solid", sans-serif;
-     font-weight: 50;
-     font-style: normal;
-    }
+:root{
+    --creme-color: #F8F8EA;
+    --darkbrown-color: #30150D;
+    --lightbrown-color: #94867C;
+    --lightbeigebrown-color: #D1CCBB;
+    --warmbrown1-color: #79271B;
+    --warmbrown2-color: #651E26;
+    --coolbrown1-color: #583823;
+    --coolbrown2-color: #432521;
+    --lightblue-color: #4EC8F9;
+    --darkblue-color: #375595;
+    --red-color: #A7002C;
+    --orange-color: #AF6001;
+    --yellow-color: #FCBB00;
+    --skin-color: #DAB9AF;
+    --pink-color: #D3577B;
+    --purple-color: #A861FA;
+    --grey-color: #D2D1CF;
+}
 
     .recipes-carousel {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--darkbrown-color);
-    }
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkbrown-color);
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-    .slide {
-      position: absolute;
-      display: none;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-      gap: 40px;
-      transition: opacity 0.5s ease;
-      opacity: 0;
-      height: 100vh;
-    }
+.slide {
+  position: absolute;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
 
-    .slide.active {
-      display: flex;
-      opacity: 1;
-      z-index: 1;
-    }
+.slide.active {
+  display: flex;
+  opacity: 1;
+  z-index: 1;
+}
 
-    .recipes-image img {
-      width: 350px;
-      height: auto;
-      border-radius: 12px;
-    }
+.recipes-image img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+}
 
-    .recipes-text {
-      width: 500px;
-      color: var(--creme-color);
-    }
+.recipes-text {
+  flex: 1;
+  min-width: 250px;
+  max-width: 600px;
+  color: var(--creme-color);
+}
 
-    .ingredients-gallery {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
+.ingredients-gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: center;   
+}
 
-    .ingredient h5 {
-      margin: 0;
-      padding: 6px 12px;
-      background: var(--creme-color);
-      color: var(--darkbrown-color);
-      border-radius: 4px;
-      font-weight: 500;
-    }
+.ingredient h5 {
+  margin: 0;
+  padding: 6px 12px;
+  background: var(--creme-color);
+  color: var(--darkbrown-color);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
 
-    .ingredient:hover {
-    transform: scale(1.05);
-    opacity: 0.5;
-    }
+.ingredient:hover {
+  transform: scale(1.05);
+  opacity: 0.5;
+}
 
-    .recipe-description {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+.recipe-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
-    .controls {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px;
-      z-index: 2;
-    }
+.controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 2;
+  box-sizing: border-box;
+}
 
-    .image-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+.image-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    .image-button img {
-      width: 60px;
-    }
+.image-button img {
+  width: 40px;
+}
 
-    button:hover {
-      opacity: 0.8;
-    }
+button:hover {
+  opacity: 0.8;
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .recipes-text {
+    max-width: 90%;
+  }
+
+  .image-button img {
+    width: 30px;
+  }
+
+  .recipes-image img {
+  width: 50%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+}
+
+  .ingredients-gallery {
+    display: flex;
+    justify-content: center;   
+  }
+}
+
+h1 {
+  font-size: 40px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h4 {
+  color: var(--darkbrown-color);
+  font-size: 20px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+}
+
+h5 {
+  font-size: 10px;
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+}
   </style>
 </head>
 
@@ -205,7 +288,7 @@
         <div class="ingredients-gallery">
           <div class="ingredient"><h5>Hot Italian Spice</h5></div>
           <div class="ingredient"><h5>Seaside Spice</h5></div>
-          <div class="ingredient"><h5>West African Curry</h5></div>
+          <div class="ingredient"><h5>Cajun</h5></div>
         </div>
         <div class="recipe-description">
           <p>An elegant parcel of perfectly steamed salmon, gently cooked in parchment with herbs and vegetables — opening it feels like unwrapping a warm, fragrant gift.</p>

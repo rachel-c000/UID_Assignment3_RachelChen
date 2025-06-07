@@ -22,27 +22,37 @@ body {
 
 <body>
 <!--navbar--->
-<header class="navbar">
-  <div class="nav-left">
-    <a href="homepage.html">
-    <img src="media/nav-bar/logo-icon.png" class="nav-icon" style="width: 60px; height: 60px;"/>
-    </a>
-    <a href="homepage.html">
-    <img src="media/nav-bar/about-us-icon.png" class="nav-icon" style="width: 60px; height: 60px;" />
-  </div>
-  </a>
-  <div class="nav-right">
-    <a href="search-result.html">
-    <img src="media/nav-bar/search-icon.png" class="nav-icon" />
-    </a>
-    <a href="shopping-cart.html">
-    <img src="media/nav-bar/profile-icon.png" class="nav-icon" />
-    </a>
-    <a href="shopping-cart.html">
-    <img src="media/nav-bar/shopping-cart-icon.png" class="nav-icon" />
-    </a>
-  </div>
-</header>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="homepage.html"><img src="media/nav-bar/logo-icon.png" alt="Logo" class="nav-icon" /></a>
+    </div>
+    <div class="nav-toggle" id="mobile-menu"><img src="media/nav-bar/toggle-icon.png"></div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="homepage.html">
+    <h2>ABOUT US</h2>
+  </a></li>
+      <li><a href="search-result.html">
+    <h2>SHOP</h2>
+      </a></li>
+      <li><a href="shopping-cart.html">
+    <h2>PROFILE</h2>
+    </a></li>
+      <li><a href="shopping-cart.html">
+    <h2>CART</h2>
+    </a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 <div class="banner-wrapper">
     <div class="image-banner">
@@ -79,77 +89,59 @@ body {
   <div class="card-container">
     <div class="card" style="background-color: var(--lightblue-color);">
       <img src="media/spices/cajun-spice.png" alt="Cajun" class="hover-swap">
-      <h2>Cajun</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Cajun<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--darkblue-color);">
       <img src="media/spices/jamaican-jerk.png" alt="Jamaican Jerk" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Jamaican Jerk</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+    <p>Jamaican Jerk<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--coolbrown1-color);">
       <img src="media/spices/chocolate-chili.png" alt="Chocolate Chili" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Chocolate Chili</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Chocolate Chili<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
         <div class="card-container">
     <div class="card" style="background-color: var(--warmbrown1-color);">
       <img src="media/spices/ethiopian-berbere.png" alt="Ethiopian Berbere" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Ethiopian Berbere</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Ethiopian Berbere<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--darkbrown-color);">
       <a href="product-page.html">
       <img src="media/spices/harrisa.png" alt="Harrisa" class="hover-swap" data-alt="img2-hover.jpg"></a>
-      <h2>Harrisa</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Harrisa<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--warmbrown2-color);">
       <img src="media/spices/perfection-spice-rub.png" alt="Perfection Spice Rub" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Perfection Spice Rub</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Perfection Spice Rub<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
     </div>
 
     <div class="recommendations-banner">
-    <h4 style="color: var(--creme-color); font-size: 60px; display: flex; justify-content: start; padding-left: 50px;">RECOMMENDATIONS</h4>
+    <h4>RECOMMENDATIONS</h4>
     </div>
 
 <p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">SIMILAR TASTES</p>
      <div class="card-container">
     <div class="card" style="background-color: var(--red-color);">
       <img src="media/spices/garam-masala.png" alt="Garam Masala" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Garam Masala</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Garam Masala<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--orange-color);">
       <img src="media/spices/afghani.png" alt="Afghani" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Afghani</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Afghani<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--skin-color);">
       <img src="media/spices/himalayan-pink-salt.png" alt="Himalayan Pink Salt" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Himalayan Pink Salt</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Himalayn Pink Salt<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
@@ -157,23 +149,17 @@ body {
         <div class="card-container">
     <div class="card" style="background-color: var(--warmbrown1-color);">
       <img src="media/spices/ethiopian-berbere.png" alt="Ethiopian Berbere" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Ethiopian Berbere</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Ethiopian Berbere<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--pink-color);">
       <img src="media/spices/za'atar.png" alt="Za'atar" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Za'atar</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>Za'atar<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--yellow-color);">
       <img src="media/spices/british-curry.png" alt="British Curry" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>British Curry</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$13.40</p>
+      <p>British Curry<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
@@ -181,23 +167,17 @@ body {
  <div class="card-container">
     <div class="card" style="background-color: var(--grey-color);">
       <img src="media/spices/afghani-fill.png" alt="Afghani Fill" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Afghani Spice - 1lb</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$47.75</p>
+      <p>Afghani - 1lb<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--grey-color);">
       <img src="media/spices/british-curry-fill.png" alt="British Curry - 1lb" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>British Curry - 1lb</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$47.75</p>
+      <p>British Curry - 1lb<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--grey-color);">
       <img src="media/spices/cajun-fill.png" alt="Cajun Spice - 1lb" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Cajun Spice - 1lb</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$47.75</p>
+      <p>Cajun - 1lb<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 
@@ -205,23 +185,17 @@ body {
  <div class="card-container">
     <div class="card" style="background-color: var(--pink-color);">
       <img src="media/spices/african-spice-blends.png" alt="African Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>African Spice Blends</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$56.90</p>
+      <p>African Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--blue-color);">
       <img src="media/spices/grilling-spice-blends.png" alt="Grilling Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Grilling Spice Blends</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$56.90</p>
+      <p>Grilling Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
 
     <div class="card" style="background-color: var(--purple-color);">
       <img src="media/spices/indian-spice-blends.png" alt="Indian Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
-      <h2>Indian Spice Blends</h2>
-      <div class="stars">★★★★★</div>
-      <p class="price">$56.90</p>
+      <p>Indian Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
   </div>
 </div>
@@ -251,7 +225,6 @@ body {
   </div>
 
 <!--footer--->
-
 <footer class="footer">
   <section class="newsletter">
     <h2><span style="color: var(--creme-color);">FLAVOUR THAT SLAPS</span></h2>
@@ -260,9 +233,9 @@ body {
 
   <section class="footer-information">
     <div class="home-shop-help">
-    <p>Home</p>
-    <p>Shop</p>
-    <p>Help</p>
+    <a href="homepage.html"><p>Home</p></a>
+    <a href="search-result.html"><p>Shop</p></a>
+    <a href="shopping-cart.html"><p>Help</p></a>
     </div>
     <div class="footer-address">
     <p>P.O. Box 250<br>Spring City, UT 84662<br>info@teenytinyspice.com</p>
