@@ -540,14 +540,15 @@ padding-bottom: -30px;
   max-width: 90vw;          /* allow wider on smaller screens */
   max-width: 500px;         /* limit max width on large screens */
   margin: 80px auto 40px;   /* vertical spacing with auto horizontal */
-  margin-top: 900px;
-  padding: 0 15px;          /* horizontal padding */
+  margin-top: 1000px;
+  padding: 0 15px 60px;          /* horizontal padding */
   text-align: center;
   color: var(--darkbrown-color);           /* rich dark brown */
   font-family: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 1.8;
+  width: 800px;
 }
 
 .intro-text p span {
@@ -574,18 +575,79 @@ padding-bottom: -30px;
   .intro-text {
     font-size: 0.8rem;     /* smaller font on mobile */
     margin-top: 900px;
-    width: 80%;
+    width: 70%;
   }
   
   .intro-icons img {
     width: 7vw;            /* slightly bigger relative to viewport */
     max-width: 20px;
   }
+
+  .more-button-out {
+    margin-top: -100px; /* Move it lower on smaller screens */
+    justify-content: center; /* Optional: center it on mobile */
+    color: var(--creme-color);
+    text-align: center;
+    width: 30px;
+  }
+
+.shop-button-out {
+  margin-top: -150px;           /* Adjust as needed */
+  display: flex;
+  justify-content: center;      /* Center horizontally */
+  align-items: center;          /* Optional: center vertically */
+  width: 100%;                  /* Full width for centering */
+  color: var(--creme-color);
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 5vw; /* More dynamic spacing on different screen sizes */
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  object-fit: cover;
+  aspect-ratio: 1 / 1; /* Keeps images square-ish on all devices */
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.photo-gallery-title {
+  margin-top: 100px;
+}
+
+.share-button-out {
+  margin-top: 400px;
+}
+
+}
+
+.share-button-out {
+  margin-top: 400px;
+  padding-left: 200px;
 }
 
 .more-button-out {
   padding: 50px;
-  justify-content: end;
+  display: flex;
+  justify-content: flex-end; /* use flex-end instead of end for wider browser support */
+  width: 100%; /* Make container full width */
+  box-sizing: border-box; /* include padding in width */
+  top: 100px;
+  margin-top: -100px;
+  margin-right: -100px;
 }
 
 #more-button {
@@ -619,10 +681,11 @@ padding-bottom: -30px;
 /* photo gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   padding: 5vw; /* More dynamic spacing on different screen sizes */
   box-sizing: border-box;
+  margin-top: -200px;
 }
 
 .gallery-img {
@@ -703,16 +766,15 @@ padding-bottom: -30px;
 
 .word-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 per row */
   column-gap: 100px;
   row-gap: 20px;
-  padding: 50px;
-  padding-left: 30px;
-  padding-right: 100px;
-  padding-bottom: 40px;
+  padding: 50px 100px 40px 30px;
   align-items: center;
   justify-content: center;
+  margin-left: 100px;
 }
+
 
 .word-card {
   background-color: var(--creme-color);
@@ -724,11 +786,11 @@ padding-bottom: -30px;
   display: inline-flex;           /* Use flexbox */
   justify-content: center;        /* horizontal center */
   align-items: center;            /* vertical center */
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding: 10px 40px;
   transition: transform 0.2s ease, background-color 0.3s ease;
   white-space: nowrap;
-  width: 200px;
+  width: 400px;
   height: fit-content;            /* you can also set a fixed height if preferred */
   text-align: center;             /* keeps multi-line text centered */
 }
@@ -758,6 +820,44 @@ padding-bottom: -30px;
   font-weight: bold;
   text-align: center;
   max-width: 90%;
+}
+
+@media (max-width: 768px) {
+.word-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exactly 3 per row */
+  column-gap: 10px;
+  row-gap: 20px;
+  padding: 50px 100px 40px 30px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 70px;
+}
+
+
+.word-card {
+  background-color: var(--creme-color);
+  border: 3px solid var(--darkbrown-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: var(--darkbrown-color);
+  cursor: pointer;
+  display: inline-flex;           /* Use flexbox */
+  justify-content: center;        /* horizontal center */
+  align-items: center;            /* vertical center */
+  font-size: 2rem;
+  padding: 10px 40px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  white-space: nowrap;
+  width: 150px;
+  height: fit-content;            /* you can also set a fixed height if preferred */
+  text-align: center;             /* keeps multi-line text centered */
+}
+
+.word-card:hover {
+  transform: scale(1.05);
+  background-color: #fff2cc;
+}
 }
 
 .flavour-gallery {
@@ -1109,6 +1209,12 @@ padding-bottom: -30px;
 
 
     /* Cart Popup */
+
+    
+    .to-cart-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
     .cart-popup {
       position: fixed;
       top: 20%;
@@ -1328,8 +1434,20 @@ padding-bottom: -30px;
   .their-review > div {
     font-size: 1rem;
   }
+
+  .reviews {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 200px;
 }
 
+.review-intro {
+  display: flex;
+  flex-direction: column;
+border-left: -50px;
+}
+}
 
 /* related products */
 
@@ -1453,10 +1571,7 @@ input#discount {
   }
   
   /* Adjust checkout button alignment */
-  .more-button-out {
-    text-align: center;
-    margin-top: 20px;
-  }
+
 }
 
     /* Base styles (desktop and larger screens) */
@@ -1607,14 +1722,6 @@ input, select {
   background-color: #5e3116;
 }
 
-/* Center the button container */
-.more-button-out {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 450px;
-  margin-top: 20px;
-}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
@@ -1632,9 +1739,6 @@ input, select {
     max-width: 100%;
   }
 
-  .more-button-out {
-    justify-content: center;
-  }
 }
 
 /* review box */
@@ -1709,5 +1813,17 @@ input, select {
 .scroll-padding {
   padding: 0 40px; /* Adjust left and right padding as needed */
   box-sizing: border-box;
+}
+
+.page-link {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.page-link a {
+  text-decoration: none;
+  color: var(--lightbrown-color);
+  padding: 10px;
 }
 

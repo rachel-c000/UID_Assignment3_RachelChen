@@ -120,9 +120,9 @@ body {
     <button class="qty-btn" id="increase" type="button">+</button>
   </div>  
   <!-- Add to Cart Button -->
-   <div class="to-cart-buttons" style="display: flex; flex-direction: row; justify-content: space-between;column-gap: 10px;">
-<button class="btn" onclick="addToCart()">Add to Cart</button>
-<a href="shopping-cart.html"><button class="btn" onclick="addToCart()">Checkout</button></a></div> 
+   <div class="to-cart-buttons">
+<button class="btn" onclick="addToCart()" style="width: 120px;">Add to Cart</button>
+<a href="shopping-cart.html"><button class="btn" onclick="addToCart()" style="width: 100px;">Checkout</button></a></div> 
 </div>
 </div>
 </div>
@@ -133,7 +133,7 @@ body {
 
 <!-- Cart Summary Popup -->
 <div id="cart-summary-popup" style="display:none; position:fixed; top:20px; right:20px; background: var(--creme-color); border:1px solid var(--darkbrown-color); color: var(--darkbrown-color); padding:20px; border-radius: 15px; width: 250px; z-index: 1000;">
-  <h3 style="margin-top: 0;">🛒 Cart Summary</h3>
+  <h3 style="margin-top: 0;">Cart Summary</h3>
   <p>Quantity: <span id="summary-qty">1</span></p>
   <p>Unit Price: $<span id="summary-price">13.40</span></p>
   <p>Total: $<span id="summary-total">13.40</span></p>
@@ -186,13 +186,6 @@ body {
 <p class="outline-text">RECIPES WITH FLAVOUR</p>
  <iframe src="recipe-carousel.html" style="width: 100%; height: 600px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
- <!--more-button-->
-  <div class="more-button-out">
-<div style="text-align: right; margin-top: 20px;">
-  <button id="more-button"><span style="color: var(--creme-color);"><h2>SHARE YOUR FLAVOUR STORY</h2></span></button>
-</div>
-</div>
-
 <!--reviews-->
   <div class="reviews">
 
@@ -244,9 +237,18 @@ body {
   </div>
   </div>
 
+<!--shop-button-->
+ <div class="shop-button-out" style="margin-top: 60px;">
+  <div class="shop-button-wrapper">
+    <button id="more-button"><h2>SHARE YOUR FLAVOUR STORY</h2></button>
+  </div>
+</div>
+
   <!--related products-->
 
-  <h1 class="related-title">RELATED PRODUCTS</h1>
+    <div class="recommendations-banner" style="margin-top: 100px;">
+    <h4 style="padding-top: 10px;">RELATED PRODUCTS</h4>
+    </div>
 <p class="outline-text" style="display: flex; align-items: center; justify-content: center; padding: 80px 0px -80px 0px;">SIMILAR TASTES</p>
      <div class="card-container">
     <div class="card" style="background-color: var(--red-color);">
@@ -308,12 +310,12 @@ body {
       <p>African Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
 
-    <div class="card" style="background-color: var(--blue-color);">
+    <div class="card" style="background-color: var(--darkblue-color);">
       <img src="media/spices/grilling-spice-blends.png" alt="Grilling Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
       <p>Grilling Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
 
-    <div class="card" style="background-color: var(--purple-color);">
+    <div class="card" style="background-color: var(--purple-color); margin-bottom: 100px;">
       <img src="media/spices/indian-spice-blends.png" alt="Indian Spice Blends" class="hover-swap" data-alt="img2-hover.jpg">
       <p>Indian Spice Blends<br>★★★★★<br>$13.40</p>
     </div>
