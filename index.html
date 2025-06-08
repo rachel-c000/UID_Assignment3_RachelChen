@@ -40,9 +40,22 @@ body {
     <div class="nav-toggle" id="mobile-menu"><img src="media/nav-bar/toggle-icon.png"></div>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">
-    <h2>ABOUT US</h2>
-  </a></li>
+     <!-- Updated SEARCH nav item -->
+<li>
+  <button id="open-search" style="background: none; border: none; cursor: pointer; color: var(--creme-color); margin-top: 10px;">
+    <h2>SEARCH</h2>
+  </button>
+</li>
+
+<!-- Search popup box -->
+<div id="search-popup" style="display: none;" class="search-popup">
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Type your search..." />
+    <button id="submit-search">Search</button>
+    <button id="close-search">Close</button>
+  </div>
+</div>
+
       <li><a href="search-result.html">
     <h2>SHOP</h2>
       </a></li>
@@ -63,7 +76,27 @@ body {
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });
-  </script>
+
+  const openBtn = document.getElementById("open-search");
+  const closeBtn = document.getElementById("close-search");
+  const searchPopup = document.getElementById("search-popup");
+  const submitBtn = document.getElementById("submit-search");
+
+  openBtn.addEventListener("click", () => {
+    searchPopup.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    searchPopup.style.display = "none";
+  });
+
+  submitBtn.addEventListener("click", () => {
+    const query = document.getElementById("search-input").value;
+    if (query.trim() !== "") {
+      window.location.href = `search-result.html?query=${encodeURIComponent(query)}`;
+    }
+  });
+</script>  
 
 <!--animated banner--->
 <div class="banner-wrapper">
@@ -141,11 +174,12 @@ body {
 
  <iframe src="spice-slide.html" style="width: 100%; height: 700px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
-<!--shop-button-->
- <div class="shop-button-out">
-  <div class="shop-button-wrapper">
-    <button id="more-button"><h2>SHOP</h2></button>
-  </div>
+<!--more-button-->
+  <div class="shop-button-out">
+<div style="text-align: right;">
+  <a href="search-result.html">
+  <button id="more-button"><span style="color: var(--creme-color);"><h2>SHOP</h2></span></button></a>
+</div>
 </div>
 
 <!--word gallery--->
@@ -182,7 +216,136 @@ body {
 
 <!--recipes-carousal--->
 <p class="outline-text">RECIPES WITH FLAVOUR</p>
- <iframe src="recipe-carousel.html" style="width: 100%; height: 700px; border: none; padding: 40px 0px 50px 0px;"></iframe>
+ <!-- Navigation Buttons -->
+      <div class="whole-recipes-carousel">
+
+  <div class="recipes-carousel">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <div class="recipes-image">
+        <img src="media/recipes/Chicken Cordon Bleu-ish.png" alt="Chicken Cordon Bleu-ish">
+      </div>
+      <div class="recipes-text">
+        <h2>Chicken Cordon Bleu-ish</h2>
+        <div class="ingredients-gallery">
+          <div class="ingredient"><h5>Certified Organic</h5></div>
+          <div class="ingredient"><h5>Certified Kosher</h5></div>
+          <div class="ingredient"><h5>Gluten Free</h5></div>
+        </div>
+        <div class="recipe-description">
+          <p>A cozy twist on the classic, this comforting dish wraps tender chicken around melty cheese and savory ham — crispy on the outside, creamy and satisfying on the inside.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <div class="recipes-image">
+        <img src="media/recipes/Wild Daylilly and Egg Soup.png" alt="Wild Daylily and Egg Soup">
+      </div>
+      <div class="recipes-text">
+        <h2>Wild Daylily and Egg Soup</h2>
+        <div class="ingredients-gallery">
+          <div class="ingredient"><h5>Szechuan Spice</h5></div>
+          <div class="ingredient"><h5>Chinese Five Spice</h5></div>
+          <div class="ingredient"><h5>Xinjiang Spice</h5></div>
+        </div>
+        <div class="recipe-description">
+          <p>A delicate, earthy broth that celebrates nature’s foraged beauty — wild daylilies and gently poached egg come together in a bowl of pure, peaceful nourishment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <div class="recipes-image">
+        <img src="media/recipes/Spiced Chocolate Mousse.png" alt="Spiced Chocolate Mousse">
+      </div>
+      <div class="recipes-text">
+        <h2>Spiced Chocolate Mousse</h2>
+        <div class="ingredients-gallery">
+          <div class="ingredient"><h5>Chocolate Chilli</h5></div>
+          <div class="ingredient"><h5>Garam Masala</h5></div>
+          <div class="ingredient"><h5>French Four Spice</h5></div>
+        </div>
+        <div class="recipe-description">
+          <p>Rich, silky chocolate with a warming kiss of spice — this mousse is like a hug in dessert form, perfect for slow moments and sweet cravings.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <div class="recipes-image">
+        <img src="media/recipes/Breakfast Lettuce Taco Bowl.png" alt="Breakfast Lettuce Taco Bowl">
+      </div>
+      <div class="recipes-text">
+        <h2>Breakfast Lettuce Taco Bowl</h2>
+        <div class="ingredients-gallery">
+          <div class="ingredient"><h5>Oxacan Adobo</h5></div>
+          <div class="ingredient"><h5>Seaside Spice</h5></div>
+          <div class="ingredient"><h5>Tolucan Chorizo</h5></div>
+        </div>
+        <div class="recipe-description">
+          <p>Fresh, fun, and full of morning energy — crisp lettuce cradles savory breakfast favorites in a light and cheerful bowl that starts the day right.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <div class="recipes-image">
+        <img src="media/recipes/Salmon en Papilotte.png" alt="Salmon en Papilotte">
+      </div>
+      <div class="recipes-text">
+        <h2>Salmon en Papilotte</h2>
+        <div class="ingredients-gallery">
+          <div class="ingredient"><h5>Hot Italian Spice</h5></div>
+          <div class="ingredient"><h5>Seaside Spice</h5></div>
+          <div class="ingredient"><h5>Cajun</h5></div>
+        </div>
+        <div class="recipe-description">
+          <p>An elegant parcel of perfectly steamed salmon, gently cooked in parchment with herbs and vegetables — opening it feels like unwrapping a warm, fragrant gift.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="recipes-controls">
+      <button class="recipes-image-button" onclick="moveCarousel(-1)">
+        <img src="media/animated carousal/spoon left.png" alt="Previous">
+      </button>
+      <button class="recipes-image-button" onclick="moveCarousel(1)">
+        <img src="media/animated carousal/spoon right.png" alt="Next">
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+      });
+      slides[index].classList.add('active');
+    }
+
+    function moveCarousel(direction) {
+      currentSlide += direction;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      }
+      showSlide(currentSlide);
+    }
+
+    // Initialize first slide
+    showSlide(currentSlide);
+  </script>
 
 <!--word gallery--->
 <div class="flavour-gallery">

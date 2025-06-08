@@ -211,6 +211,8 @@ p {
     padding-bottom: 10px;
     color: var(--creme-color);
     background-color: var(--darkbrown-color);
+    margin-left: -50px;
+    padding-left: -50px;
   }
 
   .nav-links {
@@ -592,13 +594,7 @@ padding-bottom: -30px;
   }
 
 .shop-button-out {
-  margin-top: -150px;           /* Adjust as needed */
-  display: flex;
-  justify-content: center;      /* Center horizontally */
-  align-items: center;          /* Optional: center vertically */
-  width: 100%;                  /* Full width for centering */
-  color: var(--creme-color);
-  text-align: center;
+padding-left: -100px;
 }
 
 .gallery {
@@ -767,7 +763,7 @@ padding-bottom: -30px;
 .word-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Exactly 3 per row */
-  column-gap: 100px;
+  column-gap: 50px;
   row-gap: 20px;
   padding: 50px 100px 40px 30px;
   align-items: center;
@@ -790,7 +786,7 @@ padding-bottom: -30px;
   padding: 10px 40px;
   transition: transform 0.2s ease, background-color 0.3s ease;
   white-space: nowrap;
-  width: 400px;
+  width: 300px;
   height: fit-content;            /* you can also set a fixed height if preferred */
   text-align: center;             /* keeps multi-line text centered */
 }
@@ -1827,3 +1823,291 @@ input, select {
   padding: 10px;
 }
 
+.shop-button-out {
+  margin-top: -150px;           /* Adjust as needed */
+  display: flex;
+  justify-content: end;      /* Center horizontally */
+  align-items: center;          /* Optional: center vertically */
+  width: 100%;                  /* Full width for centering */
+  color: var(--creme-color);
+  text-align: center;
+  padding: 50px;
+  margin-left: -80px;
+  height: 50px;
+}
+
+#shop-button {
+  padding: 0px 30px 0px 30px;
+  font-size: 16px;
+  background: var(--darkbrown-color);
+  color: var(--creme-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 40px;
+}
+
+#recipes-frame {
+  width: 100%;
+  height: 900px;
+  border: none;
+  padding: 40px 0 50px 0;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  #recipes-frame {
+    height: 400px; /* or whatever fits your mobile content */
+    padding: 20px 0 40px 0;
+  }
+}
+
+.slide {
+  display: flex;
+  align-items: center;       /* vertically center */
+  justify-content: center;   /* horizontally center */
+  flex-wrap: wrap;
+  gap: 40px;
+  height: 100%;              /* fill .recipes-carousel */
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  position: absolute;        /* needed for carousel behavior */
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+  z-index: 1;
+}
+
+.recipes-image img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  margin-top: -55px;
+}
+
+.recipes-text {
+  flex: 1;
+  min-width: 250px;
+  max-width: 600px;
+  color: var(--creme-color);
+  margin-top: -100px;
+}
+
+.ingredients-gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: start;   
+}
+
+.ingredient h5 {
+  margin: 0;
+  padding: 6px 12px;
+  background: var(--creme-color);
+  color: var(--darkbrown-color);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.ingredient:hover {
+  transform: scale(1.05);
+  opacity: 0.5;
+}
+
+.recipe-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.recipes-description p {
+  font-size: 60px;
+}
+
+.recipes-controls {
+    position: static;
+    margin-top: -80px;
+    padding-top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipes-image-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
+.recipes-image-button img {
+  width: 400px;
+  padding-top: 400px;
+  margin-top: 100px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .recipes-carousel {
+    height: 300px;
+    min-height: 100vh;
+    padding-bottom: 40px; /* Optional: adds some breathing room below */
+  }
+
+  
+
+.recipe-description p {
+  font-size: 15px;
+}
+
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    height: auto;
+    padding-bottom: 200px;
+  }
+
+  .recipes-text {
+    max-width: 90%;
+    margin-top: 0;
+  }
+
+  .recipes-text h2 {
+    font-size: 30px;
+  }
+
+  .ingredient h5 {
+    font-size: 15px;
+  }
+
+  .recipes-image img {
+    width: 60%;
+    max-width: 300px;
+    margin-top: 0;
+  }
+
+  .ingredients-gallery {
+    justify-content: center;
+  }
+
+  .recipes-controls {
+    position: static;
+    margin-top: -80px;
+    padding-top: -50px;
+  }
+
+  .recipes-image-button img {
+    width: 80px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+}
+  
+  .recipes-text {
+    max-width: 90%;
+    margin-top: 0;
+  }
+
+  .recipes-image img {
+    width: 80%;
+    max-width: 350px;
+  }
+
+  .ingredients-gallery {
+    justify-content: center;
+  }
+
+  .recipes-image-button img {
+    width: 100px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+.recipes-carousel {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darkbrown-color);
+}
+
+.whole-recipes-carousel {
+  height: fit-content;
+  background-color: transparent;
+}
+
+/* search pop up */
+.search-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1300px;
+  height: 100%;
+  background-color: rgba(63, 35, 35, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.search-box {
+  background: var(--creme-color);
+  padding: 30px;
+  text-align: center;
+  width: 1300px;
+  margin-top: -378px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.search-box button {
+    padding: 0px 30px 0px 30px;
+  font-size: 16px;
+  background: var(--darkbrown-color);
+  color: var(--creme-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 40px;
+}

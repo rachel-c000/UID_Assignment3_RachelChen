@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sort By Filter</title>
+  <style>
+    :root {
+      --creme-color: #f5f5dc;
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: var(--creme-color);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select {
+      padding: 8px;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 5px;
+      margin-top: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product h4 {
+      margin: 0 0 8px;
+    }
+
+    .card {
+      width: 40%;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      background-color: #fff;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .stars {
+      font-size: 22px;
+      color: goldenrod;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="filter">Sort by:</label>
+  <select id="filter" onchange="filterProducts()">
+    <option value="all">All</option>
+    <option value="similar">Similar Tastes</option>
+    <option value="popular">What's Popular</option>
+    <option value="bulk">Bulk</option>
+    <option value="gift">Gift Packs</option>
+  </select>
+
+  <div class="products" id="productList">
+    <!-- Product template - copy and customize as needed -->
+    <div class="product card popular">
+      <img src="https://via.placeholder.com/280x180" alt="Product Image">
+      <h2>Popular Product</h2>
+      <div class="stars">★★★★★</div>
+      <div class="price">$19.99</div>
+    </div>
+
+    <div class="product card gift">
+      <img src="https://via.placeholder.com/280x180" alt="Product Image">
+      <h2>Gift Pack</h2>
+      <div class="stars">★★★★☆</div>
+      <div class="price">$29.99</div>
+    </div>
+
+    <div class="product card bulk">
+      <img src="https://via.placeholder.com/280x180" alt="Product Image">
+      <h2>Bulk Item</h2>
+      <div class="stars">★★★☆☆</div>
+      <div class="price">$99.99</div>
+    </div>
+
+    <div class="product card similar">
+      <img src="https://via.placeholder.com/280x180" alt="Product Image">
+      <h2>Similar Taste</h2>
+      <div class="stars">★★★★★</div>
+      <div class="price">$14.99</div>
+    </div>
+
+    <!-- Add more products here with class matching the filter options -->
+  </div>
+
+  <script>
+    function filterProducts() {
+      const filter = document.getElementById("filter").value;
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        if (filter === "all" || product.classList.contains(filter)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+
+    // Show all products on page load
+    filterProducts();
+  </script>
+
+</body>
+</html>

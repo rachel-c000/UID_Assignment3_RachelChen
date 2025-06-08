@@ -24,12 +24,12 @@ body {
 <!--navbar--->
   <nav class="navbar">
     <div class="logo-container">
-      <a href="index.html"><img src="media/nav-bar/logo-icon.png" alt="Logo" class="nav-icon" /></a>
+      <a href="homepage.html"><img src="media/nav-bar/logo-icon.png" alt="Logo" class="nav-icon" /></a>
     </div>
     <div class="nav-toggle" id="mobile-menu"><img src="media/nav-bar/toggle-icon.png"></div>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">
+      <li><a href="homepage.html">
     <h2>ABOUT US</h2>
   </a></li>
       <li><a href="search-result.html">
@@ -104,7 +104,7 @@ body {
         <div class="product-information">
         <h1>Cajun</h1>
         <div class="rating">★★★★★ 109 Reviews</div>
-        <h2 style="color: var(--darkbrown-color);">$13.40</h2>
+        <h2>$13.40</h2>
         <p class="description">
           Ethiopian Berbère is a hot and flavorful mix of more than a dozen ingredients. It can be used as a dry or wet rub on roasted meats or tofu. Add it to stews and sauces for a bold and full flavor profile...
         </p>
@@ -127,115 +127,56 @@ body {
 </div>
 </div>
 
+
+
+
+
 <!-- Cart Summary Popup -->
-<div id="cart-summary-popup" style="
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: var(--creme-color);
-  border: 1px solid var(--darkbrown-color);
-  color: var(--darkbrown-color);
-  padding: 30px 20px;
-  width: 320px;
-  z-index: 1000;
-  font-family: 'Arial Rounded MT Bold', sans-serif;
-  box-shadow: -5px 5px 0 var(--darkbrown-color);
-">
-  <h1 style="
-    margin: 0;
-    font-size: 36px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 900;
-  ">Cart</h1>
-
-  <hr style="border: 3px solid var(--darkbrown-color); margin: 20px 0; border-style: dashed none none none;">
-
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-    <img src="media/shopping-cart/cajun-spice-png.png" alt="Spice" style="width: 80px;">
-    <div style="text-align: left; flex-grow: 1; padding-left: 15px;">
-      <p style="margin: 0 0 5px; font-size: 18px; font-weight: bold;">Organic Ethiopian Berbere</p>
-      <div style="
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 5px;
-        margin: 8px 0;
-      ">
-        <button id="popup-decrease" style="width: 30px; height: 30px; font-size: 18px; border: 2px solid var(--darkbrown-color); background: transparent; cursor: pointer;">−</button>
-        <input id="popup-quantity" type="text" value="3" readonly style="width: 40px; text-align: center; font-size: 18px; margin-top: 15px; background-color: var(--creme-color); color: var(--darkbrown-color);">
-        <button id="popup-increase" style="width: 30px; height: 30px; font-size: 18px; border: 2px solid var(--darkbrown-color); background: transparent; cursor: pointer;">+</button>
-      </div>
-    </div>
-    <p style="margin: 0; font-size: 20px; font-weight: bold;">$<span id="summary-total">13</span></p>
-  </div>
-
-  <hr style="border: 1px solid var(--darkbrown-color); margin: 20px 0;">
-
-  <div style="display: flex; justify-content: space-between; font-size: 22px; font-weight: bold;">
-    <span>Subtotal</span>
-    <span>$<span id="summary-subtotal">13</span></span>
-  </div>
-
-  <button onclick="window.location.href='shopping-cart.html'" style="
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--darkbrown-color);
-    color: var(--creme-color);
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  ">Checkout</button>
-</div>
+<div id="cart-summary-popup" style="display:none; position:fixed; top:0; right:0; background: var(--creme-color); border:5px solid var(--darkbrown-color); color: var(--darkbrown-color); padding:20px; width: 250px; z-index: 1000;">
+  <h3 style="margin-top: 0; font-size: 30px;">Cart Summary</h3>
+  <p style="font-size: 20px; font-weight: 50px; opacity: 0.5;">Quantity: <span id="summary-qty">1</span></p>
+  <p style="font-size: 20px; font-weight: 50px; opacity: 0.5;">Unit Price: $<span id="summary-price">13.40</span></p>
+  <p style="font-size: 20px; font-weight: 50px; opacity: 0.5;">Total: $<span id="summary-total">13.40</span></p>
+  <div class="cart-summary-buttons" style="display: flex;
+  flex-direction: row;">
+  <button onclick="closeCartSummary()" style="background-color: var(--darkbrown-color); color: var(--creme-color); padding: 5px; margin: 10px;">Keep Shopping</button>
+  <button onclick="window.location.href='shopping-cart.html'" style="background-color: var(--darkbrown-color); color: var(--creme-color); padding: 5px; margin: 10px;">Checkout</button>
+</div></div>
 
 <script>
-  const popupQuantityInput = document.getElementById("popup-quantity");
-  const popupDecreaseBtn = document.getElementById("popup-decrease");
-  const popupIncreaseBtn = document.getElementById("popup-increase");
-  const summaryTotal = document.getElementById("summary-total");
-  const summarySubtotal = document.getElementById("summary-subtotal");
-  const itemPrice = 13.00;
+  const quantityInput = document.getElementById("quantity");
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
+  const itemPrice = 13.40;
 
-  function updatePopupTotal() {
-    const qty = parseInt(popupQuantityInput.value, 10);
-    const total = (qty * itemPrice).toFixed(2);
-    summaryTotal.textContent = total;
-    summarySubtotal.textContent = total;
-  }
-
-  popupDecreaseBtn.addEventListener("click", () => {
-    let qty = parseInt(popupQuantityInput.value, 10);
-    if (qty > 1) {
-      popupQuantityInput.value = qty - 1;
-      updatePopupTotal();
+  decreaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value, 10);
+    if (value > 1) {
+      quantityInput.value = value - 1;
     }
   });
 
-  popupIncreaseBtn.addEventListener("click", () => {
-    let qty = parseInt(popupQuantityInput.value, 10);
-    popupQuantityInput.value = qty + 1;
-    updatePopupTotal();
+  increaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value, 10);
+    quantityInput.value = value + 1;
   });
 
   function addToCart() {
-    const qty = parseInt(popupQuantityInput.value, 10);
+    const qty = parseInt(quantityInput.value, 10);
     const total = (qty * itemPrice).toFixed(2);
 
+    // Store in localStorage
     localStorage.setItem("cartQuantity", qty);
     localStorage.setItem("cartPrice", itemPrice);
 
-    popupQuantityInput.value = qty;
-    summaryTotal.textContent = total;
-    summarySubtotal.textContent = total;
+    // Update popup content
+    document.getElementById("summary-qty").innerText = qty;
+    document.getElementById("summary-price").innerText = itemPrice.toFixed(2);
+    document.getElementById("summary-total").innerText = total;
 
-    document.getElementById("cart-summary-popup").style.display = "block";
+    // Show popup
+    const popup = document.getElementById("cart-summary-popup");
+    popup.style.display = "block";
   }
 
   function closeCartSummary() {
@@ -245,136 +186,8 @@ body {
 
 <!--recipes-carousal--->
 <p class="outline-text">RECIPES WITH FLAVOUR</p>
- <div class="whole-recipes-carousel">
+ <iframe src="recipe-carousel.html" style="width: 100%; height: 600px; border: none; padding: 40px 0px 50px 0px;"></iframe>
 
-  <div class="recipes-carousel">
-    <!-- Slide 1 -->
-    <div class="slide active">
-      <div class="recipes-image">
-        <img src="media/recipes/Chicken Cordon Bleu-ish.png" alt="Chicken Cordon Bleu-ish">
-      </div>
-      <div class="recipes-text">
-        <h2>Chicken Cordon Bleu-ish</h2>
-        <div class="ingredients-gallery">
-          <div class="ingredient"><h5>Certified Organic</h5></div>
-          <div class="ingredient"><h5>Certified Kosher</h5></div>
-          <div class="ingredient"><h5>Gluten Free</h5></div>
-        </div>
-        <div class="recipe-description">
-          <p>A cozy twist on the classic, this comforting dish wraps tender chicken around melty cheese and savory ham — crispy on the outside, creamy and satisfying on the inside.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <div class="recipes-image">
-        <img src="media/recipes/Wild Daylilly and Egg Soup.png" alt="Wild Daylily and Egg Soup">
-      </div>
-      <div class="recipes-text">
-        <h2>Wild Daylily and Egg Soup</h2>
-        <div class="ingredients-gallery">
-          <div class="ingredient"><h5>Szechuan Spice</h5></div>
-          <div class="ingredient"><h5>Chinese Five Spice</h5></div>
-          <div class="ingredient"><h5>Xinjiang Spice</h5></div>
-        </div>
-        <div class="recipe-description">
-          <p>A delicate, earthy broth that celebrates nature’s foraged beauty — wild daylilies and gently poached egg come together in a bowl of pure, peaceful nourishment.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="slide">
-      <div class="recipes-image">
-        <img src="media/recipes/Spiced Chocolate Mousse.png" alt="Spiced Chocolate Mousse">
-      </div>
-      <div class="recipes-text">
-        <h2>Spiced Chocolate Mousse</h2>
-        <div class="ingredients-gallery">
-          <div class="ingredient"><h5>Chocolate Chilli</h5></div>
-          <div class="ingredient"><h5>Garam Masala</h5></div>
-          <div class="ingredient"><h5>French Four Spice</h5></div>
-        </div>
-        <div class="recipe-description">
-          <p>Rich, silky chocolate with a warming kiss of spice — this mousse is like a hug in dessert form, perfect for slow moments and sweet cravings.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="slide">
-      <div class="recipes-image">
-        <img src="media/recipes/Breakfast Lettuce Taco Bowl.png" alt="Breakfast Lettuce Taco Bowl">
-      </div>
-      <div class="recipes-text">
-        <h2>Breakfast Lettuce Taco Bowl</h2>
-        <div class="ingredients-gallery">
-          <div class="ingredient"><h5>Oxacan Adobo</h5></div>
-          <div class="ingredient"><h5>Seaside Spice</h5></div>
-          <div class="ingredient"><h5>Tolucan Chorizo</h5></div>
-        </div>
-        <div class="recipe-description">
-          <p>Fresh, fun, and full of morning energy — crisp lettuce cradles savory breakfast favorites in a light and cheerful bowl that starts the day right.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 5 -->
-    <div class="slide">
-      <div class="recipes-image">
-        <img src="media/recipes/Salmon en Papilotte.png" alt="Salmon en Papilotte">
-      </div>
-      <div class="recipes-text">
-        <h2>Salmon en Papilotte</h2>
-        <div class="ingredients-gallery">
-          <div class="ingredient"><h5>Hot Italian Spice</h5></div>
-          <div class="ingredient"><h5>Seaside Spice</h5></div>
-          <div class="ingredient"><h5>Cajun</h5></div>
-        </div>
-        <div class="recipe-description">
-          <p>An elegant parcel of perfectly steamed salmon, gently cooked in parchment with herbs and vegetables — opening it feels like unwrapping a warm, fragrant gift.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-      <div class="recipes-controls">
-      <button class="recipes-image-button" onclick="moveCarousel(-1)">
-        <img src="media/animated carousal/spoon left.png" alt="Previous">
-      </button>
-      <button class="recipes-image-button" onclick="moveCarousel(1)">
-        <img src="media/animated carousal/spoon right.png" alt="Next">
-      </button>
-    </div>
-
-  </div>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-      });
-      slides[index].classList.add('active');
-    }
-
-    function moveCarousel(direction) {
-      currentSlide += direction;
-      if (currentSlide >= slides.length) {
-        currentSlide = 0;
-      } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-      }
-      showSlide(currentSlide);
-    }
-
-    // Initialize first slide
-    showSlide(currentSlide);
-  </script>
-  
 <!--reviews-->
   <div class="reviews">
 
@@ -545,7 +358,7 @@ body {
 
   <section class="footer-information">
     <div class="home-shop-help">
-    <a href="index.html"><p>Home</p></a>
+    <a href="homepage.html"><p>Home</p></a>
     <a href="search-result.html"><p>Shop</p></a>
     <a href="shopping-cart.html"><p>Help</p></a>
     </div>
